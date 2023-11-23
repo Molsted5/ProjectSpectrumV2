@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class PickupScript : MonoBehaviour
 {
-    
-    void Start()
-    {
-        
-    }
+    public int rotationX =2;
+    public int rotationY = 1;
+    public int rotationZ =1;
 
     
     void Update()
     {
-        transform.Rotate(new Vector3(2, 1, 1));
+        transform.Rotate(new Vector3(rotationX, rotationY, rotationZ));
     }
 }
