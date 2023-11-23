@@ -8551,7 +8551,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 7987
+  m_VersionIndex: 7990
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8766,7 +8766,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   KnockbackStreangth: 0.01
   AsteroidHealth: 0
+<<<<<<< HEAD
   Collectable: {fileID: 9177591812552198725, guid: 9692e29546dc8d949b09936bb76606e8, type: 3}
+=======
+  Collectable: {fileID: 0}
+>>>>>>> d2f17b79c8269f6fd9956c3f50e21333980fb24c
 --- !u!114 &2888059285688322221
 MonoBehaviour:
   m_ObjectHideFlags: 0
