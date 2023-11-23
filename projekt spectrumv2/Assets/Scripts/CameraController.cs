@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float m_DampTime = 0.2f;
+   /* public float m_DampTime = 0.2f;
     public float m_ScreenEdgeBuffer = 4f;
     public float m_MinSize = 6.5f;
     [HideInInspector] public Transform[] m_Targets;
@@ -102,5 +102,5 @@ public class CameraController : MonoBehaviour
         transform.position = m_DesiredPosition;
 
         m_Camera.orthographicSize = FindRequiredSize();
-    }
+    }*/
 }

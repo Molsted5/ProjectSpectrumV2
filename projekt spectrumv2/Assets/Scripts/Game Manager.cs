@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private void Start()
+   /* private void Start()
     {
       
         SetCameraTargets();
@@ -24,5 +24,5 @@ public class GameManager : MonoBehaviour
         }
 
         m_CameraControl.m_Targets = targets;
-    }
+    }*/
 }
