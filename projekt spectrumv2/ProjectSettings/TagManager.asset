@@ -11,6 +11,7 @@ TagManager:
   - Bullet
   - Background
   - Pickup
+  - Bullet2
   layers:
   - Default
   - TransparentFX

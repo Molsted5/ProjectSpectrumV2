@@ -580,7 +580,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "50416b7545614e1dab3f8246104f4aae",
     "m_Id": 0,
-    "m_DisplayName": "BlendAlpha",
+    "m_DisplayName": "Blend Alpha",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -1327,10 +1327,10 @@
     "m_Guid": {
         "m_GuidSerialized": "cf26a718-2be1-414c-91a5-2aa8c03762b9"
     },
-    "m_Name": "BlendAlpha",
+    "m_Name": "Blend Alpha",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "BlendAlpha",
-    "m_DefaultReferenceName": "_BlendAlpha",
+    "m_RefNameGeneratedByDisplayName": "Blend Alpha",
+    "m_DefaultReferenceName": "_Blend_Alpha",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
