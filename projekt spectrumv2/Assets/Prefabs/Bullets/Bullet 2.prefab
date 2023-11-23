@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 1339369468107671560}
   - component: {fileID: 3715088551082652843}
   - component: {fileID: 703032833853509191}
-  m_Layer: 0
+  - component: {fileID: 5172166896940047747}
+  m_Layer: 6
   m_Name: Bullet 2
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -153,3 +154,15 @@ MonoBehaviour:
   hitRadius1: 20
   minimumDMG: 15
   maximumDMG: 15
+--- !u!114 &5172166896940047747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4308044150903812196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0d5a539e788a044bceefa48e71b230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
