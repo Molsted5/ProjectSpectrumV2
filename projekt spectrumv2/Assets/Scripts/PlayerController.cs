@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float maxDriftSpeed = 0.8f;
     public float t = 0.2f;
     public float t2 = 1f;
+    public float invertTurningTreshold = -10f;
    
 
     Rigidbody rb;
@@ -27,14 +28,18 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         // Finds and saves the desired angular speed 
-        float currentSpeed = rb.velocity.magnitude;
+        Vector3 currentVelocity = rb.velocity;
+        Vector3 localVelocity = transform.InverseTransformDirection(currentVelocity); // using local transform
+        float localForwardSign = Mathf.Sign(moveInputValue); // forward = 1 and backward = -1
+        
+        float currentSpeed = currentVelocity.magnitude;
         float alphaAngularSpeed  = Mathf.InverseLerp(t, t2, currentSpeed / speedDefault); // value-line stretched
         float angularSpeed = Mathf.Lerp(angularSpeedDefault, angularDampingDefault, Mathf.Clamp(alphaAngularSpeed, 0, 1)); // angularSpeed dependent on current speed
-
+        
         // Drift compensation to not loose controll, when turning
         float driftCompensation;
 
-        if (Mathf.Sign(angularInputValue) == Mathf.Sign(rb.angularVelocity.y)) // checks if input matches direction
+        if (Mathf.Sign(angularInputValue) * localForwardSign == Mathf.Sign(rb.angularVelocity.y)) // checks if input matches direction
         {
             driftCompensation = 1; // Nothing changes
         }
@@ -50,10 +55,11 @@ public class PlayerController : MonoBehaviour
         rb.AddRelativeForce(Vector3.forward * moveInputValue * speedDefault);
 
         angularInputValue = Input.GetAxis("Horizontal" + playernumber); // [-1;1] left/right input
-        rb.AddRelativeTorque(Vector3.up * angularInputValue * angularSpeed * driftCompensation);
+        rb.AddRelativeTorque(Vector3.up * angularInputValue * angularSpeed * driftCompensation * localForwardSign);
 
         //Debug.Log(rb.angularVelocity.magnitude);
-
+        Debug.Log(driftCompensation);
+        //Debug.Log(localVelocity.z); 
     }
-    
+
 }
