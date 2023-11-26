@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: {x: 90, y: 0, z: 0}
-  position: {x: 0, y: 0, z: -40}
+  position: {x: 0, y: 0, z: -80}
 --- !u!1 &8559767064534687270
 GameObject:
   m_ObjectHideFlags: 0
@@ -3369,7 +3369,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 447
+  m_VersionIndex: 456
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3471,12 +3471,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playernumber: 2
-  speedDefault: 440
+  TargetSpeed: 350
+  initialSpeed: 960
   angularSpeedDefault: 1090
   angularDampingDefault: 40
   maxDriftSpeed: 1.5
   t: 0.25
   t2: 0.9
+  p: 0.2
+  p2: 1
 --- !u!54 &7687543002605953050
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -272,11 +272,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &7359220944463758046
@@ -416,7 +416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5325770500615323802, guid: 66e5db6de6f5e408eb0e7f2844f2b96d, type: 3}
       propertyPath: m_VersionIndex
-      value: 1620
+      value: 1626
       objectReference: {fileID: 0}
     - target: {fileID: 8416738831716162663, guid: 66e5db6de6f5e408eb0e7f2844f2b96d, type: 3}
       propertyPath: m_LocalScale.x
