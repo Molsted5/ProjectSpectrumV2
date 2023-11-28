@@ -8619,8 +8619,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KnockbackStreangth: 0.01
-  AsteroidHealth: 0
+  AsteroidHealth: 11
   Collectable: {fileID: 9177591812552198725, guid: 9692e29546dc8d949b09936bb76606e8, type: 3}
+  CC: {fileID: 0}
+  offset: 1.5
 --- !u!114 &3832415384074784569
 MonoBehaviour:
   m_ObjectHideFlags: 0

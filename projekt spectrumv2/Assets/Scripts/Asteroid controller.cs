@@ -19,6 +19,7 @@ public class Asteroidcontroller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        shipTransform = GameObject.Find("Player2(done)").GetComponent<Rigidbody>().transform;
         test = new Vector3(110f, 110f, 110f);
         rb = GetComponent<Rigidbody>();
         
@@ -27,14 +28,22 @@ public class Asteroidcontroller : MonoBehaviour
     }
 
     Vector3 CalculatedPosition()
-    {
-        shipTransform = GameObject.Find("Player2(done)").GetComponent<Rigidbody>().transform;
+    { 
+
+       
+
         Vector3 shipPosition = shipTransform.position;
         Vector3 asteroidePosition = rb.transform.position;
 
         Vector3 dir = (shipPosition - asteroidePosition).normalized;
         Vector3 pos = this.CC.radius * (dir * offset);
-        return pos;
+
+        //Debug.Log(this.CC.radius);
+        return pos+asteroidePosition;
+
+        //float rand = Random.Range(195,);
+
+        //return asteroidePosition + new Vector3(0,0,195);
     }
 
     private void OnCollisionEnter(Collision other)   //detect collision
@@ -55,17 +64,17 @@ public class Asteroidcontroller : MonoBehaviour
 
             if (AsteroidHealth == 4)
             {
-               GameObject dropInstance = Instantiate(Collectable, CalculatedPosition(), Quaternion.identity);
+                Instantiate(Collectable, CalculatedPosition(), Quaternion.identity);
             }   
 
-            if (AsteroidHealth == 3)
+            if (AsteroidHealth == 2)
             {
-                GameObject dropInstance = Instantiate(Collectable, CalculatedPosition(), Quaternion.identity);
+                Instantiate(Collectable, CalculatedPosition(), Quaternion.identity);
             }
 
             if (AsteroidHealth < 1)
             {
-                Instantiate(Collectable, CalculatedPosition(), Quaternion.identity);
+                 Instantiate(Collectable, CalculatedPosition(), Quaternion.identity);
                 Destroy(gameObject);
                 
             }
