@@ -3369,7 +3369,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 456
+  m_VersionIndex: 459
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3470,8 +3470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38a48f461101294fa2569211e696f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playernumber: 2
-  TargetSpeed: 350
+  playerNumber: 2
+  targetSpeed: 350
   initialSpeed: 960
   angularSpeedDefault: 1090
   angularDampingDefault: 40

@@ -2345,13 +2345,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38a48f461101294fa2569211e696f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playernumber: 2
-  speedDefault: 440
+  playerNumber: 2
+  targetSpeed: 70
+  initialSpeed: 120
   angularSpeedDefault: 1090
   angularDampingDefault: 40
   maxDriftSpeed: 1.5
   t: 0.25
   t2: 0.9
+  p: 1
+  p2: 1
 --- !u!114 &6580485268042377347
 MonoBehaviour:
   m_ObjectHideFlags: 0
