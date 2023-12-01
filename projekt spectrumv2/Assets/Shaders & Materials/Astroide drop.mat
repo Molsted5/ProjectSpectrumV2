@@ -32,10 +32,18 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
+  m_LockedProperties: _Freq
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Cracks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_0394c4af32b145728492b469bf2fd63f_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: ffa8d2666eb612a46af2bbd5d68c57c1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -50,10 +58,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Freq: 1.7
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Strengh: 1
+    - _Strengh: 13
     m_Colors:
     - _Color: {r: 0.23584908, g: 0, b: 0.07782579, a: 0}
+    - _Color_1: {r: 1, g: 0, b: 0, a: 0}
     - _emissive_color: {r: 0.24104226, g: 0.8584906, b: 0.20787342, a: 0}
   m_BuildTextureStacks: []
