@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PickupScript : MonoBehaviour
 {
-    public int rotationX =2;
-    public int rotationY = 1;
-    public int rotationZ =1;
+    public float rotationX =2;
+    public float rotationY = 1;
+    public float rotationZ =1;
 
     
     void Update()
