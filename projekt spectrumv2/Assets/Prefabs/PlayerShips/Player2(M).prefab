@@ -2355,6 +2355,7 @@ MonoBehaviour:
   t2: 0.9
   p: 1
   p2: 1
+  boostScale: 1.5
 --- !u!114 &6580485268042377347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2368,10 +2369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 100
-  slider: {fileID: 3304211351636482652}
-  fillImage: {fileID: 4400267368630887289}
-  fullHealthColor: {r: 0, g: 1, b: 0, a: 1}
-  zeroHealthColor: {r: 1, g: 0, b: 0, a: 1}
+  playerNumber: 0
 --- !u!114 &7962973969085793187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2384,6 +2382,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa37ba2f3cd5034fa48a049b36a5c4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerNumber: 0
+  bulletNumber: 0
   duration: 1
 --- !u!114 &7035069396979181773
 MonoBehaviour:
