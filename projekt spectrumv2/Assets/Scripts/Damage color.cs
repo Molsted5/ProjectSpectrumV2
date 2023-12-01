@@ -10,7 +10,8 @@ public class Damagecolor : MonoBehaviour
 {
     //Material shipMaterial;
     Renderer shipRenderer; 
-
+    public float playerNumber;
+    public float bulletNumber;
     Color colorOff = Color.white;
     Color colorOn = Color.red;
     public float duration = 1f;
@@ -19,7 +20,8 @@ public class Damagecolor : MonoBehaviour
     void Start()
     {
         //shipMaterial = GetComponent<Renderer>().material;
-        shipRenderer = GetComponent<Renderer>();
+        //shipRenderer = GetComponent<Renderer>();
+        shipRenderer = GameObject.Find("Player" + playerNumber).GetComponent<Renderer>();
     }
 
     private void Update()
@@ -51,7 +53,7 @@ public class Damagecolor : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
 
-        if (other.gameObject.CompareTag("Bullet"))
+        if (other.gameObject.CompareTag("Bullet"+bulletNumber))
         {
             hit = true;
         }

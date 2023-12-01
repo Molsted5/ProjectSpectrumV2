@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
         //Debug.Log(rb.angularVelocity.magnitude);
         //Debug.Log(driftCompensation);
-        Debug.Log(rb.velocity.magnitude); 
+        //Debug.Log(rb.velocity.magnitude); 
     }
 
 }

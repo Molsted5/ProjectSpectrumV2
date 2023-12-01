@@ -19,7 +19,7 @@ public class Asteroidcontroller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shipTransform = GameObject.Find("Player2(done)").GetComponent<Rigidbody>().transform;
+        shipTransform = GameObject.Find("Player2").GetComponent<Rigidbody>().transform;
         test = new Vector3(110f, 110f, 110f);
         rb = GetComponent<Rigidbody>();
         
@@ -49,7 +49,7 @@ public class Asteroidcontroller : MonoBehaviour
     private void OnCollisionEnter(Collision other)   //detect collision
     {
         
-        if (other.gameObject.CompareTag("Bullet"))   //detect if tag on collided object is "Bullet"
+        if (other.gameObject.CompareTag("Bullet1"))   //detect if tag on collided object is "Bullet"
         {
             rb.AddForce(Vector3.up * KnockbackStreangth, ForceMode.Impulse);   //Add force equal depending on set knockback streangth. Is also affected by object mass.
         }

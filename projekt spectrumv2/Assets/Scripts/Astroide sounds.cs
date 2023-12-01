@@ -12,7 +12,7 @@ public class Astroidesounds : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.CompareTag("Bullet"))
+        if(other.gameObject.CompareTag("Bullet1"))
         {
             impactSounds.clip = lowImpact;
             impactSounds.Play();

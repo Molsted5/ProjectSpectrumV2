@@ -37,12 +37,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Blend_Alpha: 0
     - _Metalic: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smothness: 0.18
     m_Colors:
     - _Base_Color: {r: 0.21960784, g: 0.26666668, b: 0.34117648, a: 0}
+    - _DmgColor: {r: 0.8301887, g: 0.050907798, b: 0.050907798, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &8002850133719199980
 MonoBehaviour:
