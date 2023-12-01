@@ -41,11 +41,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Freq: 1
+    - _Freq: 0.97
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Strength: 1
-    - _Strength_1: 1
+    - _Strength: 3.72
+    - _Strength_1: 0.04
     m_Colors:
     - _Color_1: {r: 0, g: 1, b: 0.7395239, a: 0}
     - _Color_base: {r: 0, g: 0.0074603558, b: 1, a: 0}
