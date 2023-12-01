@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3715088551082652843}
   - component: {fileID: 703032833853509191}
   - component: {fileID: 5172166896940047747}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Bullet2
   m_TagString: Bullet2
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 100
   lifetime: 50
-  hitRadius1: 20
+  hitRadius1: 50
   minimumDMG: 15
   maximumDMG: 15
 --- !u!114 &5172166896940047747
