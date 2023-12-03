@@ -7,6 +7,7 @@ public class GlobalInventory : MonoBehaviour
 {
     public static GlobalInventory Instance;
     public List<Pickup> pickups = new List<Pickup>();
+    
 
     private void Awake()
     {
@@ -18,6 +19,9 @@ public class GlobalInventory : MonoBehaviour
         
 
     }
+  
+
+
     public void AddPickup (Pickup pickupToAdd)
     {
         bool pickupExist = false;
@@ -57,6 +61,4 @@ public class GlobalInventory : MonoBehaviour
         }
         Debug.Log(pickupToRemove.count + " " + pickupToRemove.name + "removed");
     }
-
-   
 }

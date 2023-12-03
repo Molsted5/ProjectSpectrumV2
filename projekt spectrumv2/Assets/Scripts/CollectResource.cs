@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollectResource : MonoBehaviour
 {
-    public Pickup pickup = new Pickup("Item Name", 1);
+    public Pickup pickup = new Pickup("Resource", 1);
 
     private void OnTriggerEnter(Collider other)
     {

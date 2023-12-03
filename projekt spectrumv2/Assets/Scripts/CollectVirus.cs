@@ -5,7 +5,7 @@ using UnityEngine;
 public class CollectVirus : MonoBehaviour
 
  {
-    public Pickup pickup = new Pickup("Item Name", 1);
+    public Pickup pickup = new Pickup("Virus", 1);
 
     private void OnTriggerEnter(Collider other)
     {
