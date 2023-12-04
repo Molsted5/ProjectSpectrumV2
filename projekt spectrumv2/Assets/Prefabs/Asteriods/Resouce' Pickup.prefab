@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7933739792784696167}
   - component: {fileID: 8469938119055484490}
   - component: {fileID: 5441455286479005644}
-  - component: {fileID: -4436708248058618374}
+  - component: {fileID: 1612294967259206794}
   m_Layer: 0
   m_Name: Resouce' Pickup
   m_TagString: Pickup
@@ -122,7 +122,7 @@ MonoBehaviour:
   rotationX: 2
   rotationY: 1
   rotationZ: 1
---- !u!114 &-4436708248058618374
+--- !u!114 &1612294967259206794
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,9 +131,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 9177591812552198725}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62a98b58b74df9f45ac11cad2f6b7723, type: 3}
+  m_Script: {fileID: 11500000, guid: 62f4e00984b472b49aced0b9cc676277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup:
-    name: Resource
-    count: 1

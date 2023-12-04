@@ -1,38 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Content;
 using UnityEngine;
 
 public class VirusSpawner : MonoBehaviour
 {
 
-    public float spawnRate;
-
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private GameObject virusPrefab;
-   
-
-    private void Start()
-    {
-        StartCoroutine(Spawner());
-        
-    }
-
-    private IEnumerator Spawner()
-    {
-        bool canSpawn = true;
-
-        WaitForSeconds wait = new WaitForSeconds(spawnRate*Time.deltaTime);
-        while (canSpawn)
-        {
-            yield return wait;
-
+    
+      public IEnumerator Spawn(int wait)
+        {   
             int randPoint = Random.Range(0, spawnPoints.Length);
             Transform spawn = spawnPoints[randPoint];
 
+            yield return new WaitForSeconds(wait);
             Instantiate(virusPrefab, spawn.position, Quaternion.identity);
+            yield break;
+         }
 
-        }
-
-    }
-
+    
 }
