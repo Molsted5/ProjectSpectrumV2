@@ -17,6 +17,25 @@ public class TutorialController : MonoBehaviour
     private GameObject ControlsComponent;
     private GameObject ShootComponent;
     private GameObject ObjectiveComponent;
+    private GameObject HealthObjective;
+    public GameObject ShipText;
+    public GameObject ContinueText;
+
+    public GameObject Player1;
+    public GameObject Player2;
+    private Vector3 P1Position;
+    private Quaternion P1Rotation;
+    private Vector3 P2Position;
+    private Quaternion P2Rotation;
+    
+
+
+
+
+
+    /*private GameObject TestComponent;
+    private GameObject TestComponent1;*/
+
 
 
 
@@ -36,6 +55,7 @@ public class TutorialController : MonoBehaviour
         Factory2 = GameObject.Find("T_Factory2");
         Factory2.SetActive(false);*/
 
+
         PlayerComponent = GameObject.Find("Players");
         PlayerComponent.SetActive(false);
         ControlsComponent = GameObject.Find("Control_Intro");
@@ -44,8 +64,52 @@ public class TutorialController : MonoBehaviour
         ShootComponent.SetActive(false);
         ObjectiveComponent = GameObject.Find("Objective_Intro");
         ObjectiveComponent.SetActive(false);
+        HealthObjective = GameObject.Find("Health_Intro");
+        HealthObjective.SetActive(false);
+        ShipText.SetActive(false);
+        ContinueText.SetActive(false);
+
+        P1Position = Player1.transform.position;
+        P1Rotation = Player1.transform.rotation;
+        P2Position = Player2.transform.position;
+        P2Rotation = Player2.transform.rotation;
+        Player1.SetActive(false);
+        Player2.SetActive(false);
+
+
         
-       
+
+
+
+
+        /*PlayerController[] playerControllers = GameObject.Find("Players").GetComponentsInChildren<PlayerController>(true);
+
+        
+        if (playerControllers.Length > 0)
+        {
+            foreach (PlayerController obj in playerControllers)
+            {
+                Debug.Log("Activating script on: " + obj.gameObject.name);
+                obj.gameObject.SetActive(true);
+            }
+        }*/
+
+
+        /*GameObject.Find("Players").GetComponentsInChildren<PlayerController>(true);       
+           foreach (PlayerController obj in GameObject.Find("Players").GetComponentsInChildren<PlayerController>(true))
+                {
+                    obj.SetActive(true);
+                }*/
+
+        //GameObject.Find("Players").GetComponentInChildren<PlayerController>(true).enabled = true;
+
+
+
+        /*TestComponent = GameObject.Find("Player2_Test");              First attempt at disabling scripts (don't do this lol)
+        TestComponent1 = TestComponent.GetComponent(typeof(Scipt);*/
+
+        //GameObject.Find("Player2_Tutorial").GetComponent<Damagecolor>().enabled = false;     Call and disable a component on another gameobject (scripts set to off by default in unity)
+
 
     }
 
@@ -58,15 +122,30 @@ public class TutorialController : MonoBehaviour
             switch (StageCount)
             {
                 case 1:
+                    GameObject.Find("Welcome").SetActive(false);
+                    ShipText.SetActive(true);
+                    ContinueText.SetActive(true);
+                    Player1.SetActive(true);                    
+                    Player2.SetActive(true);
                     PlayerComponent.SetActive(true);
                     StageCount++;
                     break;
                 case 2:
                     ControlsComponent.SetActive(true);
+                    ShipText.SetActive(false);
+                    Player1.GetComponent<PlayerController>().enabled = true;
+                    Player2.GetComponent<PlayerController>().enabled = true;
                     StageCount++;
                     break;
                 case 3:
+                    Player1.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    Player2.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    Player1.transform.SetPositionAndRotation(P1Position, P1Rotation);
+                    Player2.transform.SetPositionAndRotation(P2Position, P2Rotation);
+                    Player1.GetComponent<PlayerController>().enabled = false;
+                    Player2.GetComponent<PlayerController>().enabled = false;
                     ControlsComponent.SetActive(false);
+
                     ShootComponent.SetActive(true);
                     StageCount++;
                     break;
@@ -77,17 +156,12 @@ public class TutorialController : MonoBehaviour
                     break;
                 case 5:
                     ObjectiveComponent.SetActive(false);
+                    HealthObjective.SetActive(true);
                     StageCount++;
                     break;
 
-
             }
-            /*if (StageCount == 1)
-            {                
-                player1.SetActive(true);
-                StageCount++;
-            }*/
-
+       
         }
 
     }
