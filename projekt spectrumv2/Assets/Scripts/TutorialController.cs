@@ -16,10 +16,10 @@ public class TutorialController : MonoBehaviour
     private GameObject PlayerComponent;
     private GameObject ControlsComponent;
     private GameObject ShootComponent;
-    private GameObject ObjectiveComponent;
-    private GameObject HealthObjective;
+    private GameObject ObjectiveComponent;    
     public GameObject ShipText;
     public GameObject ContinueText;
+    public GameObject OutroText;
 
     public GameObject Player1;
     public GameObject Player2;
@@ -63,11 +63,10 @@ public class TutorialController : MonoBehaviour
         ShootComponent = GameObject.Find("Shoot_Intro");
         ShootComponent.SetActive(false);
         ObjectiveComponent = GameObject.Find("Objective_Intro");
-        ObjectiveComponent.SetActive(false);
-        HealthObjective = GameObject.Find("Health_Intro");
-        HealthObjective.SetActive(false);
+        ObjectiveComponent.SetActive(false);       
         ShipText.SetActive(false);
-        ContinueText.SetActive(false);
+        //ContinueText.SetActive(false);
+        OutroText.SetActive(false);
 
         P1Position = Player1.transform.position;
         P1Rotation = Player1.transform.rotation;
@@ -116,7 +115,7 @@ public class TutorialController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
         if (Input.GetKeyDown(KeyCode.K))
         {           
             switch (StageCount)
@@ -145,7 +144,8 @@ public class TutorialController : MonoBehaviour
                     Player1.GetComponent<PlayerController>().enabled = false;
                     Player2.GetComponent<PlayerController>().enabled = false;
                     ControlsComponent.SetActive(false);
-
+                    Player1.GetComponent<player1ShootTest>().enabled = true;
+                    Player2.GetComponent<player2ShootTest>().enabled = true;
                     ShootComponent.SetActive(true);
                     StageCount++;
                     break;
@@ -156,7 +156,10 @@ public class TutorialController : MonoBehaviour
                     break;
                 case 5:
                     ObjectiveComponent.SetActive(false);
-                    HealthObjective.SetActive(true);
+                    Player1.SetActive(false);
+                    Player2.SetActive(false);
+                    PlayerComponent.SetActive(false);
+                    OutroText.SetActive(true);
                     StageCount++;
                     break;
 
