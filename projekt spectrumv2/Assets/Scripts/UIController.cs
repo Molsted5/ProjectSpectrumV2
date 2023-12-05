@@ -8,24 +8,39 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-    private int count;
+    public int count;
     private int maxCount = 4;
     public TMP_Text textComponent;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        textComponent.text = count + "/" + maxCount;
         count = 0;  
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            if (count < maxCount)
+            {
+                count++;
+            }
+
+            textComponent.text = count + "/" + maxCount;
+        }
+
         
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Pickup"))
-            textComponent.text = count++.ToString();
+        //if (other.gameObject.CompareTag("Pickup"))
+        
+            
 
         
     }
