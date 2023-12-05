@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4005059572782690}
   - component: {fileID: 8249465513729825878}
   - component: {fileID: 3249584413764191433}
-  - component: {fileID: 8125380558390298087}
+  - component: {fileID: 3444779527145912646}
   m_Layer: 0
   m_Name: FactoryBroken
   m_TagString: Untagged
@@ -37362,7 +37362,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7582473058716759590}
   m_Mesh: {fileID: 0}
---- !u!65 &8125380558390298087
+--- !u!65 &3444779527145912646
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37381,5 +37381,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 31.2233, y: 29.071726, z: 34.43475}
-  m_Center: {x: -12.550049, y: 4.535863, z: -0.7933655}
+  m_Size: {x: 30.955566, y: 29.071726, z: 31.898254}
+  m_Center: {x: -13.0616455, y: 4.535863, z: -1.7319641}
