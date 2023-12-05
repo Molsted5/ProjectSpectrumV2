@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using Unity.Burst.CompilerServices;
 
 public class RingZone : MonoBehaviour {
 
     Material ring;
-    Material barHacking;
-    TextMeshPro tmp;
+    //Material barHacking;
+    //TextMeshPro tmp;
     GameManager gameManager;
     public float depositRate;
     public float hackSteps;
@@ -16,7 +17,6 @@ public class RingZone : MonoBehaviour {
     public float hackCompleted = 10f;
     public bool isCromprimised;
 
-    
     private enum State { // diferent states the zone can be in
         None,
         Hacking,
@@ -27,11 +27,7 @@ public class RingZone : MonoBehaviour {
 
     private State state; // to use switch instead of endless if statements
 
-
     private State previousState;
-
- 
-   
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player1")) {       // if player1 enters
@@ -110,11 +106,11 @@ public class RingZone : MonoBehaviour {
 
         ring = GetComponent<Renderer>().material;
         
-        GameObject child = transform.GetChild(0).gameObject;    // get the hacking bar, which is a child of the ring
-        barHacking = child.GetComponent<Renderer>().material;
+        //GameObject child = transform.GetChild(0).gameObject;    // get the hacking bar, which is a child of the ring
+        //barHacking = child.GetComponent<Renderer>().material;
 
-        GameObject child1 = transform.GetChild(1).gameObject;   // get the text 
-        tmp = child1.GetComponent<TextMeshPro>(); 
+        //GameObject child1 = transform.GetChild(1).gameObject;   // get the text 
+        //tmp = child1.GetComponent<TextMeshPro>(); 
 
         state = State.None;
         previousState = State.None; 
@@ -123,10 +119,9 @@ public class RingZone : MonoBehaviour {
     public IEnumerator Deposeting(float depositRate) {
         while (true) {
             yield return new WaitForSeconds(depositRate);
-            if (gameManager.recourceCount > 0 && state == State.Depositing)
-            {
+            if (gameManager.recourceCount > 0 && state == State.Depositing) {
                 gameManager.recourceCount--;
-                gameManager.depositCount++;  
+                gameManager.depositCount++;
             }
         }
     }
@@ -155,37 +150,36 @@ public class RingZone : MonoBehaviour {
             case State.None:
                 ring.SetFloat("_ColorAlpha", 0.5f);             // ring
                 ring.SetFloat("_VisibilityAlpha", 1.0f);
-                barHacking.SetFloat("_BarVisibility", 0.0f);    // bar
-                tmp.text = "";                                  // text
+                //barHacking.SetFloat("_BarVisibility", 0.0f);    // bar
+                //tmp.text = "";                                  // text
                 break;
             case State.Hacking:
                 if(gameManager.virusCount == 1 || isCromprimised){
                     ring.SetFloat("_ColorAlpha", 0.0f);
                     ring.SetFloat("_VisibilityAlpha", 1.0f);
-                    barHacking.SetFloat("_BarVisibility", 1.0f);
-                    barHacking.SetFloat("_ColorSwitch", 1.0f);
-                    tmp.text = "Hacking..";
-                    tmp.color = new Color(0.08235288f, 0.4705881f, 0.2549019f, 1.0f);
+                    //barHacking.SetFloat("_BarVisibility", 1.0f);
+                    //barHacking.SetFloat("_ColorSwitch", 1.0f);
+                    //tmp.text = "Hacking..";
+                    //tmp.color = new Color(0.08235288f, 0.4705881f, 0.2549019f, 1.0f);
                 }
                 break;
             case State.Hacked:         
                 ring.SetFloat("_VisibilityAlpha", 0.0f);
-                barHacking.SetFloat("_BarVisibility", 0.0f);
-                tmp.text = "";
+                //barHacking.SetFloat("_BarVisibility", 0.0f);
+                //tmp.text = "";
                 break;
             case State.Depositing:
                 if(gameManager.recourceCount > 0) {
                     ring.SetFloat("_ColorAlpha", 1.0f);
                     ring.SetFloat("_VisibilityAlpha", 1.0f);
-                    barHacking.SetFloat("_BarVisibility", 0.0f);
-                    tmp.text = "+10";
-                    tmp.color = Color.magenta;
+                    //barHacking.SetFloat("_BarVisibility", 0.0f);
+                    //tmp.color = Color.magenta;
                 }
                 break;
             case State.Intercepting:
                 ring.SetFloat("_ColorAlpha", 0.5f);             
                 ring.SetFloat("_VisibilityAlpha", 0.15f);
-                if (previousState == State.Depositing) {            // intercepting depositing 
+                /*if (previousState == State.Depositing) {            // intercepting depositing 
                     tmp.text = ""; 
                 }
                 else {                                              // intercepting hacking 
@@ -193,7 +187,7 @@ public class RingZone : MonoBehaviour {
                     barHacking.SetFloat("_ColorSwitch", 1.0f);
                     tmp.text = "~no signal ";
                     tmp.color = new Color (0.08235288f, 0.4705881f, 0.2549019f, 0.05f);
-                }                
+                }*/                
                 break;
         }
     }   
