@@ -17,9 +17,11 @@ public class TutorialController : MonoBehaviour
     private GameObject ControlsComponent;
     private GameObject ShootComponent;
     private GameObject ObjectiveComponent;
-    private GameObject HealthObjective;
     public GameObject ShipText;
     public GameObject ContinueText;
+    public GameObject WelcomeText;
+    public GameObject End;
+    public GameObject Play;
 
     public GameObject Player1;
     public GameObject Player2;
@@ -27,7 +29,7 @@ public class TutorialController : MonoBehaviour
     private Quaternion P1Rotation;
     private Vector3 P2Position;
     private Quaternion P2Rotation;
-    
+
 
 
 
@@ -35,8 +37,6 @@ public class TutorialController : MonoBehaviour
 
     /*private GameObject TestComponent;
     private GameObject TestComponent1;*/
-
-
 
 
     // Start is called before the first frame update
@@ -64,10 +64,10 @@ public class TutorialController : MonoBehaviour
         ShootComponent.SetActive(false);
         ObjectiveComponent = GameObject.Find("Objective_Intro");
         ObjectiveComponent.SetActive(false);
-        HealthObjective = GameObject.Find("Health_Intro");
-        HealthObjective.SetActive(false);
         ShipText.SetActive(false);
-        ContinueText.SetActive(false);
+        //ContinueText.SetActive(false);
+        End.SetActive(false);
+        Play.SetActive(false);
 
         P1Position = Player1.transform.position;
         P1Rotation = Player1.transform.rotation;
@@ -122,9 +122,8 @@ public class TutorialController : MonoBehaviour
             switch (StageCount)
             {
                 case 1:
-                    GameObject.Find("Welcome").SetActive(false);
-                    ShipText.SetActive(true);
-                    ContinueText.SetActive(true);
+                    WelcomeText.SetActive(false);
+                    ShipText.SetActive(true);                    
                     Player1.SetActive(true);                    
                     Player2.SetActive(true);
                     PlayerComponent.SetActive(true);
@@ -145,18 +144,26 @@ public class TutorialController : MonoBehaviour
                     Player1.GetComponent<PlayerController>().enabled = false;
                     Player2.GetComponent<PlayerController>().enabled = false;
                     ControlsComponent.SetActive(false);
-
                     ShootComponent.SetActive(true);
+                    Player1.GetComponent<player1ShootTest>().enabled = true;
+                    Player2.GetComponent<player2ShootTest>().enabled = true;
                     StageCount++;
                     break;
                 case 4:
                     ShootComponent.SetActive(false);
+                    Player1.GetComponent<player1ShootTest>().enabled = false;
+                    Player2.GetComponent<player2ShootTest>().enabled = false;
                     ObjectiveComponent.SetActive(true);
                     StageCount++;
                     break;
                 case 5:
                     ObjectiveComponent.SetActive(false);
-                    HealthObjective.SetActive(true);
+                    PlayerComponent.SetActive(false);
+                    ContinueText.SetActive(false);
+                    Player1.SetActive(false);
+                    Player2.SetActive(false);
+                    End.SetActive(true);
+                    Play.SetActive(true);
                     StageCount++;
                     break;
 
