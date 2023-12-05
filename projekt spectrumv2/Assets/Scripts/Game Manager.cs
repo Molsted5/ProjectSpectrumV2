@@ -9,12 +9,16 @@ public class GameManager : MonoBehaviour
     VirusSpawner spawn;
     public int virusCount;
     public int recourceCount;
+    public int depositCount;
+    public int hackedFactories;
   
     void Start()
     {
         spawn = gameObject.GetComponent<VirusSpawner>();
         virusCount = 0;
         recourceCount = 0;
+        depositCount = 0;
+        hackedFactories = 0;
         canSpawn = true;
 
         // sæt start værdiger, resource, virus,
@@ -33,5 +37,7 @@ public class GameManager : MonoBehaviour
 
         // ændring af værdiger
     }
+
+
 
 }
