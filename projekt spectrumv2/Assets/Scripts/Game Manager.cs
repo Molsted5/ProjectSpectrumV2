@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         isTargetFound = false;
+        isTarget2Found = false;
         gamestate = Gamestate.gameActive;
         //gamestate = Gamestate.titlecard;
         // titlecard
@@ -67,11 +68,11 @@ public class GameManager : MonoBehaviour
 
         Instantiate((Player), (Spawn.position), Quaternion.identity);
         if (Player.CompareTag("Player1")) {
-            shipTransform = GameObject.Find("Player1").GetComponent<Rigidbody>().transform;
+            //shipTransform = GameObject.Find("Player1").GetComponent<Rigidbody>().transform;
             camControl.FindTargets(1);
         }
         if (Player.CompareTag("Player2")) {
-            shipTransform = GameObject.Find("Player2").GetComponent<Rigidbody>().transform;
+            shipTransform = GameObject.FindWithTag("Player2").GetComponent<Rigidbody>().transform;
             camControl.FindTargets(2);
         }
     }
@@ -90,15 +91,13 @@ public class GameManager : MonoBehaviour
         SpawnPlayer(Player1, SpawnP1); 
         SpawnPlayer(Player2, SpawnP2);
         
-        player1Transform = GameObject.Find("Player1").transform;
-        player2Transform = GameObject.Find("Player2").transform;
-
+        player1Transform = GameObject.FindWithTag("Player1").transform;
+        player2Transform = GameObject.FindWithTag("Player2").transform;
           
         virusCount = 0;
         recourceCount = 0;
         depositCount = 0;
         hackedFactories = 0;
-
     }
 
     void Update() {

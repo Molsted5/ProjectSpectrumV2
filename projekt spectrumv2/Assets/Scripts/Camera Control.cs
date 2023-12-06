@@ -21,9 +21,9 @@ public class CameraControl : MonoBehaviour
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         gameManager.isTargetFound = false;
+        gameManager.isTarget2Found = false;
         m_Camera = GetComponentInChildren<Camera>();
     }
-
 
     private void FixedUpdate()
     {
@@ -32,7 +32,6 @@ public class CameraControl : MonoBehaviour
             Zoom();
         } 
     }
-
 
     private void Move()
     {
