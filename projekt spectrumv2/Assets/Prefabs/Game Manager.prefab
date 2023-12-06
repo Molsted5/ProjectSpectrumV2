@@ -167,3 +167,4 @@ MonoBehaviour:
   recourceCount: 0
   depositCount: 0
   hackedFactories: 0
+  isGameLoaded: 0

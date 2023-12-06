@@ -19,13 +19,15 @@ public class Damagecolor : MonoBehaviour
     
     void Start()
     {
+        shipRenderer = this.GetComponent<Renderer>();
         //shipMaterial = GetComponent<Renderer>().material;
         //shipRenderer = GetComponent<Renderer>();
-        shipRenderer = GameObject.Find("Player" + playerNumber).GetComponent<Renderer>();
     }
 
     private void Update()
     {
+        //shipRenderer = GameObject.FindWithTag("Player" + playerNumber).GetComponent<Renderer>();
+
         if (hit == true) {
             StartCoroutine(DMGIndicator(duration)); 
             //shipRenderer.material.SetColor("_Base_Color", colorOn); 

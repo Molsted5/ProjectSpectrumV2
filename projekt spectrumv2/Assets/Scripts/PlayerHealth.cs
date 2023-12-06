@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour {
     public float startingHealth = 100f;               // The amount of health each player starts with.
-    
+    GameManager gameManager;
+
     Material healthbarMaterial;
     public float playerNumber;
     //public Slider slider;                             // The slider to represent how much health the player currently has.
@@ -23,6 +24,7 @@ public class PlayerHealth : MonoBehaviour {
 
     private void Awake() {
         healthbarMaterial = GameObject.Find("Healthbar"+playerNumber).GetComponent<Renderer>().material;
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         // Instantiate the explosion prefab and get a reference to the particle system on it.
         //m_ExplosionParticles = Instantiate(m_ExplosionPrefab).GetComponent<ParticleSystem>();
 
@@ -73,6 +75,10 @@ public class PlayerHealth : MonoBehaviour {
     private void OnDeath() {
         // Set the flag so that this function is only called once.
         dead = true;
+        if (gameObject.CompareTag("Player1")) {
+            gameManager.deathcountP1++;
+        }
+        else { gameManager.deathcountP2++;}
 
         // Move the instantiated explosion prefab to the tank's position and turn it on.
         //m_ExplosionParticles.transform.position = transform.position;

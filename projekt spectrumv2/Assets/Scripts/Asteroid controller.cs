@@ -11,20 +11,18 @@ public class Asteroidcontroller : MonoBehaviour
     public float AsteroidHealth;
     public GameObject Collectable;
     Vector3 test;
-    Transform shipTransform;
+    
     public CapsuleCollider CC;
     public float offset = 1.5f;
-
+    GameManager gameManager;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        shipTransform = GameObject.Find("Player2").GetComponent<Rigidbody>().transform;
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         test = new Vector3(110f, 110f, 110f);
         rb = GetComponent<Rigidbody>();
-        
-
-
     }
 
     Vector3 CalculatedPosition()
@@ -32,7 +30,7 @@ public class Asteroidcontroller : MonoBehaviour
 
        
 
-        Vector3 shipPosition = shipTransform.position;
+        Vector3 shipPosition = gameManager.shipTransform.position;
         Vector3 asteroidePosition = rb.transform.position;
 
         Vector3 dir = (shipPosition - asteroidePosition).normalized;
@@ -86,14 +84,10 @@ public class Asteroidcontroller : MonoBehaviour
         }
     }
 
-    private void spawn()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
+
         
     }
 }

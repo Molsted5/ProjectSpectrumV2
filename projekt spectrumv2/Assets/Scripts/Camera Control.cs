@@ -9,6 +9,7 @@ public class CameraControl : MonoBehaviour
     public float m_MinSize = 6.5f;
     /*[HideInInspector]*/ public Transform[] m_Targets;
 
+    GameManager gameManager;
 
     private Camera m_Camera;
     private float m_ZoomSpeed;
@@ -18,14 +19,18 @@ public class CameraControl : MonoBehaviour
 
     private void Awake()
     {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        gameManager.isTargetFound = false;
         m_Camera = GetComponentInChildren<Camera>();
     }
 
 
     private void FixedUpdate()
     {
-        Move();
-        Zoom();
+        if (gameManager.isTargetFound) {
+            Move();
+            Zoom();
+        } 
     }
 
 
@@ -103,4 +108,21 @@ public class CameraControl : MonoBehaviour
 
         m_Camera.orthographicSize = FindRequiredSize();
     }
+
+    public void FindTargets(int playerNumber) {
+        if (!gameManager.isTargetFound) {
+            if (playerNumber == 1) {
+                m_Targets[0] = GameObject.FindWithTag("Player1").transform;
+                gameManager.isTargetFound = true;
+            }
+        }
+
+        if (!gameManager.isTarget2Found) {
+            if (playerNumber == 2) {
+                m_Targets[1] = GameObject.FindWithTag("Player2").transform; 
+                gameManager.isTarget2Found = true;
+            }     
+        }
+    }  
+   
 }
