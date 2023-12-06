@@ -6,14 +6,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int respawnTime = 5;
-    public bool canSpawn;
+    [HideInInspector] public bool canSpawn;
     VirusSpawner spawn;
     CameraControl camControl;
     public int virusCount;
     public int recourceCount;
     public int depositCount;
     public int hackedFactories;
-    public bool isGameLoaded;
+    [HideInInspector] public bool isGameLoaded;
     private Transform player1Transform; 
     private Transform player2Transform;
     private Transform winner;
@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
     public Transform SpawnP2;
     public GameObject Player1;
     public GameObject Player2;
-    public bool isTargetFound;
-    public bool isTarget2Found;
+    public bool isTargetFound; 
+    public bool isTarget2Found; 
     public Transform shipTransform;
 
     private enum Gamestate { 
@@ -50,8 +50,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        isTargetFound = false;
-        isTarget2Found = false;
+        
         gamestate = Gamestate.gameActive;
         //gamestate = Gamestate.titlecard;
         // titlecard
@@ -62,6 +61,11 @@ public class GameManager : MonoBehaviour
         // sæt start værdiger, resource, virus,
         // bool, kan værdiger ændres.
         
+    }
+
+    public void RespawnPlayer(GameObject Player, Transform Spawn) {
+        Player.transform.position = Spawn.position; 
+        Player.SetActive(true);
     }
 
     public void SpawnPlayer(GameObject Player, Transform Spawn) {
@@ -82,6 +86,7 @@ public class GameManager : MonoBehaviour
         canSpawn = true;
         isGameLoaded = true;
         isTargetFound = false;
+        isTarget2Found = false;
         spawn = gameObject.GetComponent<VirusSpawner>();
         camControl = GameObject.Find("Camerarig").GetComponent<CameraControl>();
         
@@ -101,8 +106,9 @@ public class GameManager : MonoBehaviour
     }
 
     void Update() {
-
+        Debug.Log(gamestate);
         if(gamestate == Gamestate.gameActive) {
+
             if (depositCount == 10 || deathcountP1 == 3) {
                 winner = player2Transform;
                 gamestate = Gamestate.winner;
