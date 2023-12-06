@@ -19,20 +19,18 @@ public class CameraControl : MonoBehaviour
 
     private void Awake()
     {
+    
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        gameManager.isTargetFound = false;
         m_Camera = GetComponentInChildren<Camera>();
     }
 
-
     private void FixedUpdate()
     {
-        if (gameManager.isTargetFound) {
+        if (gameManager.isTargetFound && gameManager.isTarget2Found) {
             Move();
             Zoom();
-        } 
+        }
     }
-
 
     private void Move()
     {
@@ -40,7 +38,6 @@ public class CameraControl : MonoBehaviour
 
         transform.position = Vector3.SmoothDamp(transform.position, m_DesiredPosition, ref m_MoveVelocity, m_DampTime);
     }
-
 
     private void FindAveragePosition()
     {
@@ -110,19 +107,15 @@ public class CameraControl : MonoBehaviour
     }
 
     public void FindTargets(int playerNumber) {
-        if (!gameManager.isTargetFound) {
-            if (playerNumber == 1) {
-                m_Targets[0] = GameObject.FindWithTag("Player1").transform;
-                gameManager.isTargetFound = true;
-            }
+        if (playerNumber == 1)
+        {
+            m_Targets[0] = GameObject.FindWithTag("Player1").transform;
+            gameManager.isTargetFound = true;
         }
-
-        if (!gameManager.isTarget2Found) {
-            if (playerNumber == 2) {
-                m_Targets[1] = GameObject.FindWithTag("Player2").transform; 
-                gameManager.isTarget2Found = true;
-            }     
+        if (playerNumber == 2)
+        {
+            m_Targets[1] = GameObject.FindWithTag("Player2").transform;
+            gameManager.isTarget2Found = true;
         }
     }  
-   
 }
