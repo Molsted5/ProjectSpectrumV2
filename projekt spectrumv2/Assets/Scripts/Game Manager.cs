@@ -6,14 +6,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int respawnTime = 5;
-    public bool canSpawn;
+    [HideInInspector] public bool canSpawn;
     VirusSpawner spawn;
     CameraControl camControl;
     public int virusCount;
     public int recourceCount;
     public int depositCount;
     public int hackedFactories;
-    public bool isGameLoaded;
+    [HideInInspector] public bool isGameLoaded;
     private Transform player1Transform; 
     private Transform player2Transform;
     private Transform winner;
@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
     public Transform SpawnP2;
     public GameObject Player1;
     public GameObject Player2;
-    public bool isTargetFound;
-    public bool isTarget2Found;
+    public bool isTargetFound; 
+    public bool isTarget2Found; 
     public Transform shipTransform;
 
     private enum Gamestate { 
@@ -45,19 +45,23 @@ public class GameManager : MonoBehaviour
         camControl.m_Targets[1] = winner;
 
         // ui ellemtner, + reset button
-        //zoom på vinder selv fjender ikke er død
+        //zoom pï¿½ vinder selv fjender ikke er dï¿½d
     }
 
     private void Awake()
     {
-        //isTargetFound = false;
-        //isTarget2Found = false;
+        
         gamestate = Gamestate.gameActive;
         //gamestate = Gamestate.titlecard;
         // titlecard
     }
     void Start(){
         isGameLoaded = false;
+    }
+
+    public void RespawnPlayer(GameObject Player, Transform Spawn) {
+        Player.transform.position = Spawn.position; 
+        Player.SetActive(true);
     }
 
     public void SpawnPlayer(GameObject Player, Transform Spawn) {
@@ -98,8 +102,9 @@ public class GameManager : MonoBehaviour
     }
 
     void Update() {
-
+        Debug.Log(gamestate);
         if(gamestate == Gamestate.gameActive) {
+
             if (depositCount == 10 || deathcountP1 == 3) {
                 winner = player2Transform;
                 gamestate = Gamestate.winner;
@@ -140,7 +145,7 @@ public class GameManager : MonoBehaviour
         //gameste skift handlinger
 
 
-        // ændring af værdiger
+        // ï¿½ndring af vï¿½rdiger
     }
 
 

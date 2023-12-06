@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour {
     public float startingHealth = 100f;               // The amount of health each player starts with.
     GameManager gameManager;
+    CameraControl camControl;
 
     Material healthbarMaterial;
     public float playerNumber;
@@ -25,6 +26,7 @@ public class PlayerHealth : MonoBehaviour {
     private void Awake() {
         healthbarMaterial = GameObject.Find("Healthbar"+playerNumber).GetComponent<Renderer>().material;
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        camControl = gameManager.GetComponent<CameraControl>();
         // Instantiate the explosion prefab and get a reference to the particle system on it.
         //m_ExplosionParticles = Instantiate(m_ExplosionPrefab).GetComponent<ParticleSystem>();
 
@@ -57,7 +59,7 @@ public class PlayerHealth : MonoBehaviour {
         if (currentHealth <= 0f && !dead) {
             OnDeath();
         }
-        Debug.Log(currentHealth);
+        //Debug.Log(currentHealth);
     }
 
 
@@ -76,9 +78,19 @@ public class PlayerHealth : MonoBehaviour {
         // Set the flag so that this function is only called once.
         dead = true;
         if (gameObject.CompareTag("Player1")) {
+            //gameManager.isTargetFound = false;
             gameManager.deathcountP1++;
+            gameObject.SetActive(false);
+            gameManager.RespawnPlayer(gameObject, gameManager.SpawnP1);
+            //gameManager.SpawnPlayer(gameManager.Player1, gameManager.SpawnP1);
         }
-        else { gameManager.deathcountP2++;}
+        else {
+            //gameManager.isTarget2Found = false;
+            gameManager.deathcountP2++;
+            gameObject.SetActive(false);
+            gameManager.RespawnPlayer(gameObject, gameManager.SpawnP2);
+            //gameManager.SpawnPlayer(gameManager.Player2, gameManager.SpawnP2);
+        }
 
         // Move the instantiated explosion prefab to the tank's position and turn it on.
         //m_ExplosionParticles.transform.position = transform.position;
@@ -92,7 +104,8 @@ public class PlayerHealth : MonoBehaviour {
         //m_ExplosionAudio.Play();
 
         // Turn the tank off.
-        gameObject.SetActive(false);
+
+        
     }
 
 }
