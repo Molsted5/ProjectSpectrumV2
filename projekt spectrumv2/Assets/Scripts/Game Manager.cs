@@ -50,18 +50,14 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        isTargetFound = false;
-        isTarget2Found = false;
+        //isTargetFound = false;
+        //isTarget2Found = false;
         gamestate = Gamestate.gameActive;
         //gamestate = Gamestate.titlecard;
         // titlecard
     }
     void Start(){
         isGameLoaded = false;
-
-        // sæt start værdiger, resource, virus,
-        // bool, kan værdiger ændres.
-        
     }
 
     public void SpawnPlayer(GameObject Player, Transform Spawn) {
@@ -82,6 +78,7 @@ public class GameManager : MonoBehaviour
         canSpawn = true;
         isGameLoaded = true;
         isTargetFound = false;
+        isTarget2Found = false;
         spawn = gameObject.GetComponent<VirusSpawner>();
         camControl = GameObject.Find("Camerarig").GetComponent<CameraControl>();
         
