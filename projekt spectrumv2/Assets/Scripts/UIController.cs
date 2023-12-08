@@ -38,9 +38,16 @@ public class Score : MonoBehaviour
     public GameObject P2UIResource4;
     public GameObject OtherIcons;
 
-    GameManager gameManagerScript;
+    //Sliders
+    public GameObject HackingBar;
+
+    //Full canvases
     public GameObject UI_Canvas;
     public GameObject UI_Victory;
+
+    //Script calls
+    GameManager gameManagerScript;
+    RingZone RingZoneScript;
 
 
     // Start is called before the first frame update
@@ -142,6 +149,8 @@ public class Score : MonoBehaviour
                 //1st life icon deactivated
                 break;
         }
+
+        HackingBar.GetComponent<UnityEngine.UI.Slider>().value = count;     //RingZoneScript.hackSteps;
 
         //Text constantly updating to match Deposit Count and Hacked Factoriest
         textComponentP1.text = gameManagerScript.hackedFactories + "/" + MaxFactoryCount + " Hacked";
