@@ -61,7 +61,6 @@ public class Score : MonoBehaviour
         textComponentP1.text = gameManagerScript.hackedFactories + "/" + MaxFactoryCount + " Hacked";
         textComponentP2.text = gameManagerScript.depositCount + "/" + MaxDepositCount + " Deposited";
         UI_Victory.SetActive(false);
-        HackingBar.SetActive(false);
     }
 
     // Update is called once per frame
@@ -153,13 +152,13 @@ public class Score : MonoBehaviour
                 break;
         }
 
-        if (RingZoneScript.hackSteps > 0)
+        /*if (RingZoneScript.hackSteps > 0)
         {
 
             HackingBar.SetActive(true);
             
         }
-        HackingBar.GetComponent<UnityEngine.UI.Slider>().value = RingZoneScript.hackSteps;
+        HackingBar.GetComponent<UnityEngine.UI.Slider>().value = RingZoneScript.hackSteps;*/
 
         //Text constantly updating to match Deposit Count and Hacked Factoriest
         textComponentP1.text = gameManagerScript.hackedFactories + "/" + MaxFactoryCount + " Hacked";

@@ -3180,7 +3180,7 @@ MonoBehaviour:
   playerNumber: 2
   targetSpeed: 351
   initialSpeed: 960
-  angularSpeedDefault: 1090
+  angularSpeedDefault: 1600
   angularDampingDefault: 40
   maxDriftSpeed: 1.5
   t: 0.25
