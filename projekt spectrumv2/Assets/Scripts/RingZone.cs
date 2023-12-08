@@ -23,7 +23,7 @@ public class RingZone : MonoBehaviour {
     public AudioClip factoryHackedClip;
     public AudioClip isComprimisedClip;
 
-    private enum State { // diferent states the zone can be in
+    public enum State { // diferent states the zone can be in
         None,
         Hacking,
         Hacked,
@@ -31,11 +31,11 @@ public class RingZone : MonoBehaviour {
         Intercepting,
     }
 
-    private State state; // to use switch instead of endless if statements
+    public State state; // to use switch instead of endless if statements
 
     private State previousState;
 
-    private void OnTriggerEnter(Collider other) {
+    public void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player1")) {       // if player1 enters
             if (state == State.None) {   // if no state, then start hacking
                 previousState = state;                      // save previous state 
@@ -68,7 +68,7 @@ public class RingZone : MonoBehaviour {
         }
     }
 
-    private void OnTriggerExit(Collider other) {            // Similiar logic to OnTriggerEnter 
+    public void OnTriggerExit(Collider other) {            // Similiar logic to OnTriggerEnter 
         if (other.gameObject.CompareTag("Player1")) {
             if (state == State.Hacking) {
                 previousState = state;

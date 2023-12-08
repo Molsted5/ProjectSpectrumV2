@@ -153,12 +153,13 @@ public class Score : MonoBehaviour
                 break;
         }
 
-        if (RingZoneScript.hackSteps > 0)
-        {
+        
+            if (RingZoneScript.hackSteps > 0)
+            {
 
             HackingBar.SetActive(true);
             
-        }
+             }
         HackingBar.GetComponent<UnityEngine.UI.Slider>().value = RingZoneScript.hackSteps;
 
         //Text constantly updating to match Deposit Count and Hacked Factoriest
