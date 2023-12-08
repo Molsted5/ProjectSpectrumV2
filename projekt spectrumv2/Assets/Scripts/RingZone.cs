@@ -73,7 +73,7 @@ public class RingZone : MonoBehaviour {
             if (state == State.Hacking) {
                 previousState = state;
                 state = State.None;
-                StopCoroutine(Hacking(hackRate));
+                StopCoroutine(Hacking(hackRate)); 
             }
             else {
                 if (state == State.Intercepting) {
@@ -164,6 +164,7 @@ public class RingZone : MonoBehaviour {
             case State.None:
                 ring.SetFloat("_ColorAlpha", 0.5f);             // ring
                 ring.SetFloat("_VisibilityAlpha", 1.0f);
+                ring.SetFloat("_Strength", 2.0f);
                 //barHacking.SetFloat("_BarVisibility", 0.0f);    // bar
                 //tmp.text = "";                                  // text
                 break;
@@ -171,6 +172,7 @@ public class RingZone : MonoBehaviour {
                 if(gameManager.virusCount == 1 || isCromprimised){
                     ring.SetFloat("_ColorAlpha", 0.0f);
                     ring.SetFloat("_VisibilityAlpha", 1.0f);
+                    ring.SetFloat("_Strength", 9.0f);
                     //barHacking.SetFloat("_BarVisibility", 1.0f);
                     //barHacking.SetFloat("_ColorSwitch", 1.0f);
                     //tmp.text = "Hacking..";
@@ -186,6 +188,7 @@ public class RingZone : MonoBehaviour {
                 if(gameManager.recourceCount > 0) {
                     ring.SetFloat("_ColorAlpha", 1.0f);
                     ring.SetFloat("_VisibilityAlpha", 1.0f);
+                    ring.SetFloat("_Strength", 9.0f);
                     //barHacking.SetFloat("_BarVisibility", 0.0f);
                     //tmp.color = Color.magenta;
                 }
@@ -193,6 +196,7 @@ public class RingZone : MonoBehaviour {
             case State.Intercepting:
                 ring.SetFloat("_ColorAlpha", 0.5f);             
                 ring.SetFloat("_VisibilityAlpha", 0.15f);
+                ring.SetFloat("_Strength", 4.0f);
                 /*if (previousState == State.Depositing) {            // intercepting depositing 
                     tmp.text = ""; 
                 }
@@ -201,7 +205,7 @@ public class RingZone : MonoBehaviour {
                     barHacking.SetFloat("_ColorSwitch", 1.0f);
                     tmp.text = "~no signal ";
                     tmp.color = new Color (0.08235288f, 0.4705881f, 0.2549019f, 0.05f);
-                }*/                
+                }*/
                 break;
         }
     }   

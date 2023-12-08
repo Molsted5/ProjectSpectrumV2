@@ -5,7 +5,10 @@ using UnityEngine.UIElements;
 
 public class Asteroidcontroller : MonoBehaviour
 {
+    public Texture dmg2;
+    public Texture dmg3;
 
+    Material asteroidMaterial;
     Rigidbody rb;
     public float KnockbackStreangth;
     public float AsteroidHealth;
@@ -24,6 +27,7 @@ public class Asteroidcontroller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        asteroidMaterial = this.GetComponent<Renderer>().material;
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         test = new Vector3(110f, 110f, 110f);
         rb = GetComponent<Rigidbody>();
@@ -31,9 +35,6 @@ public class Asteroidcontroller : MonoBehaviour
 
     Vector3 CalculatedPosition()
     { 
-
-       
-
         Vector3 shipPosition = gameManager.shipTransform.position;
         Vector3 asteroidePosition = rb.transform.position;
 
@@ -76,11 +77,13 @@ public class Asteroidcontroller : MonoBehaviour
 
             if (AsteroidHealth == 4)
             {
+                asteroidMaterial.SetTexture("_Cracks", dmg2);
                 ResourceDrop();
             }   
 
             if (AsteroidHealth == 2)
             {
+                asteroidMaterial.SetTexture("_Cracks", dmg3);
                 ResourceDrop();
             }
 
