@@ -8,50 +8,142 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-    //public int count = 0;
-    private int MaxResourceCount = 4;
+    //Int Conuters
+    public int count;
+    private int MaxFactoryCount = 4;
     private int MaxDepositCount = 10;
-    public TMP_Text textComponentP1;
-    public TMP_Text textComponentP2;
-    GameManager gameManagerScript;
-
-    //Objects used in script
-    public GameObject Player1UIComponent;
-    public GameObject Player2UIComponent;
-
+    
     //Sprites
     public Sprite VirusInventoryEmpty;
     public Sprite VirusInventoryFull;
+    public Sprite ResourceInventoryEmpty;
+    public Sprite ResourceInventoryFull;
+
+    //UI Text Objects
+    public TMP_Text textComponentP1;
+    public TMP_Text textComponentP2;
 
     //UI icon objects
     public GameObject VirusInventoryIcon;    
-    public GameObject Player1Lives;
-    public GameObject Player2Lives;
-    
+    public GameObject Player1Life1;
+    public GameObject Player1Life2;
+    public GameObject Player1Life3;
+    public GameObject Player2Life1;
+    public GameObject Player2Life2;
+    public GameObject Player2Life3;
+    public GameObject P2UIResource1;
+    public GameObject P2UIResource2;
+    public GameObject P2UIResource3;
+    public GameObject P2UIResource4;
+    public GameObject OtherIcons;
+
+    GameManager gameManagerScript;
 
 
     // Start is called before the first frame update
     void Start()
     {          
         gameManagerScript = GameObject.Find("Game Manager").GetComponent<GameManager>();        
+        count = 1;
 
-        textComponentP1.text = gameManagerScript.recourceCount + "/" + MaxResourceCount;
-        textComponentP2.text = gameManagerScript.depositCount + "/" + MaxDepositCount;
+        textComponentP1.text = gameManagerScript.hackedFactories + "/" + MaxFactoryCount + " Hacked";
+        textComponentP2.text = gameManagerScript.depositCount + "/" + MaxDepositCount + " Deposited";
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {        
+        switch (gameManagerScript.virusCount) //Turn icon for virus inventory on or off
+        {
+            case 0:
+                VirusInventoryIcon.GetComponent<UnityEngine.UI.Image>().sprite = VirusInventoryEmpty;
+                count = 2;
+                //Debug.Log("Empty");
+                break;
+            case 1:
+                VirusInventoryIcon.GetComponent<UnityEngine.UI.Image>().sprite = VirusInventoryFull;
+                count = 1;
+                //Debug.Log("Full");
+            break;
+        }
 
-        textComponentP1.text = gameManagerScript.recourceCount + "/" + MaxResourceCount;
-        textComponentP2.text = gameManagerScript.depositCount + "/" + MaxDepositCount;
+    switch (gameManagerScript.recourceCount) //Switch between 1-4 full resource icons depending on resourceCount in gameManagerScript
+        {
+            case 0:
+                P2UIResource1.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryEmpty;
+                P2UIResource2.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryEmpty;
+                P2UIResource3.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryEmpty;
+                P2UIResource4.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryEmpty;
+                break;
+            case 1:
+                P2UIResource1.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryFull;
+                P2UIResource2.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryEmpty;
+                P2UIResource3.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryEmpty;
+                P2UIResource4.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryEmpty;
+                break;
+            case 2:
+                P2UIResource1.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryFull;
+                P2UIResource2.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryFull;
+                P2UIResource3.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryEmpty;
+                P2UIResource4.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryEmpty;
+                break;
+            case 3:
+                P2UIResource1.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryFull;
+                P2UIResource2.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryFull;
+                P2UIResource3.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryFull;
+                P2UIResource4.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryEmpty;
+                break;
+            case 4:
+                P2UIResource1.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryFull;
+                P2UIResource2.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryFull;
+                P2UIResource3.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryFull;
+                P2UIResource4.GetComponent<UnityEngine.UI.Image>().sprite = ResourceInventoryFull;
+                break;
+        }
 
-    }
+        switch (gameManagerScript.deathcountP1) //Life icons for player 1 decrease as deathcountP1 increase
+        {
+            case 0: 
+                //All 3 life icons active as default
+                break;
+            case 1:
+                Player1Life3.SetActive(false);
+                //3rd life icon deactivated
+                break;
+            case 2:
+                Player1Life2.SetActive(false);
+                //2nd life icon deactivated
+                break;
+            case 3:
+                Player1Life1.SetActive(false);
+                //1st life icon deactivated (dead sad days)
+                break;
+        }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //if (other.gameObject.CompareTag("Pickup"))
-        
+        switch (gameManagerScript.deathcountP2) //Life icons for player 2 decrease as deathCountP2 increase
+        {
+            case 0:
+                //All 3 life icons active as default
+                break;
+            case 1:
+                Player2Life3.SetActive(false);
+                //3rd life icon deactivated
+                break;
+            case 2:
+                Player2Life2.SetActive(false);
+                //2nd life icon deactivated
+                break;
+            case 3:
+                Player2Life1.SetActive(false);
+                //1st life icon deactivated
+                break;
+        }
+
+        //Text constantly updating to match Deposit Count and Hacked Factories
+        textComponentP1.text = gameManagerScript.hackedFactories + "/" + MaxFactoryCount + " Hacked";
+        textComponentP2.text = gameManagerScript.depositCount + "/" + MaxDepositCount + " Deposited";
+
+    
             
 
         

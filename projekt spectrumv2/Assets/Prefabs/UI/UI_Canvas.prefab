@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 6776905022363950432}
   - component: {fileID: 5193126654822652403}
   m_Layer: 5
-  m_Name: P2Life(3)_Icon
+  m_Name: P2Life(1)_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,7 +316,6 @@ RectTransform:
   - {fileID: 5340712591943250700}
   - {fileID: 4736631959580580406}
   - {fileID: 1125062448984388539}
-  - {fileID: 7363155417611782892}
   - {fileID: 808918806759369483}
   m_Father: {fileID: 7360889499806933608}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -583,6 +582,7 @@ RectTransform:
   m_Children:
   - {fileID: 1387324157162223609}
   - {fileID: 4047871087042305979}
+  - {fileID: 8174235853622825315}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -892,11 +892,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1387324157162223609}
+  m_Father: {fileID: 8174235853622825315}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -112, y: -175}
+  m_AnchoredPosition: {x: -878.00006, y: -468.00006}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &6053328516985801081
@@ -937,6 +937,43 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5086087299911340425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8174235853622825315}
+  m_Layer: 5
+  m_Name: Other
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8174235853622825315
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5086087299911340425}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 9119784617383049428}
+  - {fileID: 7363155417611782892}
+  m_Father: {fileID: 7360889499806933608}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5414673324095141071
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,7 +1077,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 9119784617383049428}
   - {fileID: 544743064036659211}
   - {fileID: 2264588010504047150}
   - {fileID: 8331782854517494298}
@@ -1143,7 +1179,7 @@ GameObject:
   - component: {fileID: 2581041244925965850}
   - component: {fileID: 8611646526176441960}
   m_Layer: 5
-  m_Name: P2Life(1)_Icon
+  m_Name: P2Life(3)_Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1236,11 +1272,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4047871087042305979}
+  m_Father: {fileID: 8174235853622825315}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -110.69998, y: -177.69998}
+  m_AnchoredPosition: {x: 603.30005, y: -473}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &7199793910170109553
