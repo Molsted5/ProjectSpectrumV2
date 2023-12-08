@@ -11,6 +11,10 @@ public class Asteroidcontroller : MonoBehaviour
     public float AsteroidHealth;
     public GameObject Collectable;
     Vector3 test;
+
+    public AudioSource asteroideSource;
+    public AudioClip dropSound;
+  
     
     public CapsuleCollider CC;
     public float offset = 1.5f;
@@ -44,6 +48,16 @@ public class Asteroidcontroller : MonoBehaviour
         //return asteroidePosition + new Vector3(0,0,195);
     }
 
+   
+
+        public void ResourceDrop()
+        {
+        asteroideSource.clip = dropSound;
+        asteroideSource.Play();
+        Instantiate(Collectable, CalculatedPosition(), Quaternion.identity);
+
+         }
+
     private void OnCollisionEnter(Collision other)   //detect collision
     {
         
@@ -62,17 +76,17 @@ public class Asteroidcontroller : MonoBehaviour
 
             if (AsteroidHealth == 4)
             {
-                Instantiate(Collectable, CalculatedPosition(), Quaternion.identity);
+                ResourceDrop();
             }   
 
             if (AsteroidHealth == 2)
             {
-                Instantiate(Collectable, CalculatedPosition(), Quaternion.identity);
+                ResourceDrop();
             }
 
             if (AsteroidHealth < 1)
             {
-                 Instantiate(Collectable, CalculatedPosition(), Quaternion.identity);
+                ResourceDrop();
                 Destroy(gameObject);
                 
             }

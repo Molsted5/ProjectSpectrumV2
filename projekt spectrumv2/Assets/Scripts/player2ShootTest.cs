@@ -8,8 +8,8 @@ public class player2ShootTest : MonoBehaviour
     [SerializeField] private Transform firingPointLeft;
     [SerializeField] private Transform firingPointRight;
     [SerializeField] private float currentLaunchforce = 20;
-    //public AudioSource blasterAudio;
-    //public AudioClip blasterFiring;
+    public AudioSource blasterAudio;
+    public AudioClip blasterFiring;
 
     float firingTimer;
 
@@ -42,8 +42,8 @@ public class player2ShootTest : MonoBehaviour
         shootInstanceLeft.velocity = currentLaunchforce * firingPointLeft.up;
         shootInstanceRight.velocity = currentLaunchforce * firingPointRight.up;
 
-        //blasterAudio.clip = blasterFiring;
-        //blasterAudio.Play();
+        blasterAudio.clip = blasterFiring;
+        blasterAudio.Play();
 
     }
 }

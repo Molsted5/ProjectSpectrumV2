@@ -7,8 +7,8 @@ public class player1ShootTest : MonoBehaviour
     [SerializeField] private Rigidbody bulletPrefab;
     [SerializeField] private Transform firingPoint;
     [SerializeField] private float currentLaunchforce = 20;
-    //public AudioSource blasterAudio;
-    //public AudioClip blasterFiring;
+    public AudioSource blasterAudio;
+    public AudioClip blasterFiring;
 
     float firingTimer;
     
@@ -39,8 +39,8 @@ public class player1ShootTest : MonoBehaviour
        Rigidbody shootInstance = Instantiate(bulletPrefab, firingPoint.position, firingPoint.rotation) as Rigidbody;
        shootInstance.velocity = currentLaunchforce * firingPoint.up;
 
-        //blasterAudio.clip = blasterFiring;
-        //blasterAudio.Play();
+        blasterAudio.clip = blasterFiring;
+        blasterAudio.Play();
 
     }
 

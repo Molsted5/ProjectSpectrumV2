@@ -16,7 +16,7 @@ public class Bullet1Script : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Wall"))
+        /*if (other.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
         }
@@ -24,7 +24,7 @@ public class Bullet1Script : MonoBehaviour
         if (other.gameObject.CompareTag("Astroide"))
         {
             Destroy(gameObject);
-        }
+        }*/
 
         if (other.gameObject.CompareTag("Player2"))
         {
@@ -46,12 +46,12 @@ public class Bullet1Script : MonoBehaviour
             }
 
             //Destroy(other.gameObject);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
 
 
-       
 
+        Destroy(gameObject);
     }
 
     private float CalculateDamage()

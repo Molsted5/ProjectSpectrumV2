@@ -12,6 +12,8 @@ TagManager:
   - Pickup
   - Bullet2
   - Bullet1
+  - Factory
+  - TutorialPrefab
   layers:
   - Default
   - TransparentFX

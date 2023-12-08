@@ -10,7 +10,7 @@ public class Score : MonoBehaviour
 {
     //Int Conuters
     public int count;
-    private int MaxFactoryCount = 4;
+    private int MaxFactoryCount = 3;
     private int MaxDepositCount = 10;
     
     //Sprites
@@ -22,6 +22,7 @@ public class Score : MonoBehaviour
     //UI Text Objects
     public TMP_Text textComponentP1;
     public TMP_Text textComponentP2;
+    public TMP_Text VictoryScreen;
 
     //UI icon objects
     public GameObject VirusInventoryIcon;    
@@ -38,6 +39,8 @@ public class Score : MonoBehaviour
     public GameObject OtherIcons;
 
     GameManager gameManagerScript;
+    public GameObject UI_Canvas;
+    public GameObject UI_Victory;
 
 
     // Start is called before the first frame update
@@ -48,6 +51,7 @@ public class Score : MonoBehaviour
 
         textComponentP1.text = gameManagerScript.hackedFactories + "/" + MaxFactoryCount + " Hacked";
         textComponentP2.text = gameManagerScript.depositCount + "/" + MaxDepositCount + " Deposited";
+        UI_Victory.SetActive(false);
     }
 
     // Update is called once per frame
@@ -139,13 +143,26 @@ public class Score : MonoBehaviour
                 break;
         }
 
-        //Text constantly updating to match Deposit Count and Hacked Factories
+        //Text constantly updating to match Deposit Count and Hacked Factoriest
         textComponentP1.text = gameManagerScript.hackedFactories + "/" + MaxFactoryCount + " Hacked";
         textComponentP2.text = gameManagerScript.depositCount + "/" + MaxDepositCount + " Deposited";
 
-    
-            
 
-        
+        if (gameManagerScript.gamestate == GameManager.Gamestate.winner) //When Victory disable UI and set UI winner text
+        {
+
+            UI_Canvas.SetActive(false);
+            UI_Victory.SetActive(true);
+
+            if (gameManagerScript.depositCount == 10 || gameManagerScript.deathcountP1 == 3)
+            {
+                VictoryScreen.text = "Player 2 Victory!";
+            }
+
+            else if (gameManagerScript.hackedFactories == 3 || gameManagerScript.deathcountP2 == 3)
+            {
+                VictoryScreen.text = "Player 1 Victory!";
+            }
+        }        
     }
 }

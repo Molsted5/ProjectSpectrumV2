@@ -16,6 +16,12 @@ public class RingZone : MonoBehaviour {
     public float hackRate;
     public float hackCompleted = 10f;
     public bool isCromprimised;
+    
+
+    public AudioSource factorySource;
+    public AudioClip depositClip;
+    public AudioClip factoryHackedClip;
+    public AudioClip isComprimisedClip;
 
     private enum State { // diferent states the zone can be in
         None,
@@ -121,6 +127,8 @@ public class RingZone : MonoBehaviour {
             yield return new WaitForSeconds(depositRate);
             if (gameManager.recourceCount > 0 && state == State.Depositing) {
                 gameManager.recourceCount--;
+                factorySource.clip = depositClip;
+                factorySource.Play();
                 gameManager.depositCount++;
             }
         }
@@ -135,12 +143,18 @@ public class RingZone : MonoBehaviour {
                 gameManager.virusCount--;
                     
                 }
-
+                
                 hackSteps++;
+                factorySource.clip = isComprimisedClip;
+                factorySource.Play();
                 if ( hackSteps == 10) {
+                    factorySource.clip = factoryHackedClip;
+                    factorySource.Play();
                     gameManager.hackedFactories++;
-                } 
-            } 
+                    previousState = state;
+                    state = State.Hacked;
+                }
+            }
         }  
     }
 
@@ -163,7 +177,7 @@ public class RingZone : MonoBehaviour {
                     //tmp.color = new Color(0.08235288f, 0.4705881f, 0.2549019f, 1.0f);
                 }
                 break;
-            case State.Hacked:         
+            case State.Hacked:
                 ring.SetFloat("_VisibilityAlpha", 0.0f);
                 //barHacking.SetFloat("_BarVisibility", 0.0f);
                 //tmp.text = "";
