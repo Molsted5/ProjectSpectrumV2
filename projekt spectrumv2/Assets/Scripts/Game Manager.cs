@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
     }
 
     void Update() {
-        Debug.Log(gamestate);
+        //Debug.Log(gamestate);
         if(gamestate == Gamestate.gameActive) {
 
             if (depositCount == 10 || deathcountP1 == 3) {
