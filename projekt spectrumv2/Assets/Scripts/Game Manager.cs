@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public bool isTarget2Found; 
     public Transform shipTransform;
 
-    private enum Gamestate { 
+    public enum Gamestate { 
        
         titlecard,
         menu,
@@ -36,8 +36,8 @@ public class GameManager : MonoBehaviour
         winner,
     }
 
-    private Gamestate gamestate;
-    private Gamestate previusGamestate;
+    public Gamestate gamestate;
+    public Gamestate previusGamestate;
 
     public void Winner(Transform winner) {
 
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         //zoom p� vinder selv fjender ikke er d�d
     }
 
-    private void Awake()
+    public void Awake()
     {
         
         gamestate = Gamestate.gameActive;

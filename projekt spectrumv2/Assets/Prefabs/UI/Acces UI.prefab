@@ -44,5 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99bbd7af49b39fd4bb64cc5d4369f62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 0
-  textComponent: {fileID: 0}
+  textComponentP1: {fileID: 0}
+  textComponentP2: {fileID: 0}
+  Player1UIComponent: {fileID: 0}
+  Player2UIComponent: {fileID: 0}
+  VirusInventoryEmpty: {fileID: 0}
+  VirusInventoryFull: {fileID: 0}
+  VirusInventoryIcon: {fileID: 0}
+  Player1Lives: {fileID: 0}
+  Player2Lives: {fileID: 0}
+  TEST: {fileID: 0}
