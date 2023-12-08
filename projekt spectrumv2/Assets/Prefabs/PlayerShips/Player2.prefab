@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7943761543588938397}
   - component: {fileID: 2648505476414421504}
   - component: {fileID: 5345622965473941489}
-  - component: {fileID: 7484335749777628916}
   - component: {fileID: 4638846637787965586}
   m_Layer: 0
   m_Name: Healthbar2
@@ -85,28 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7484335749777628916
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8069928074745064064}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &4638846637787965586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3099,7 +3076,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 462
+  m_VersionIndex: 465
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3257,10 +3234,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 9.4
-  m_Height: 4.445
+  m_Radius: 10.76
+  m_Height: 27.261522
   m_Direction: 1
-  m_Center: {x: 0.000015258789, y: 0, z: -0.0000009536743}
+  m_Center: {x: 0.000015258788, y: 0, z: 4.490758}
 --- !u!114 &7079154118422286563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3305,7 +3282,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 3715088551082652843, guid: 368d3f85b03ef2b468ffc43b9bfea489, type: 3}
   firingPointLeft: {fileID: 4805127603878250724}
   firingPointRight: {fileID: 194440859243541300}
-  currentLaunchforce: 40
+  currentLaunchforce: 180
   blasterAudio: {fileID: -6931093373251936196}
   blasterFiring: {fileID: 8300000, guid: fcc76a98b6f940945acb370cfa2da9d9, type: 3}
   firingRate: 1

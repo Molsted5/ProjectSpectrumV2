@@ -5,6 +5,7 @@ using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using TMPro;
+using OpenCover.Framework.Model;
 
 public class Score : MonoBehaviour
 {
@@ -52,13 +53,15 @@ public class Score : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {          
+    {
+        RingZoneScript = GameObject.FindWithTag("Factory").GetComponent<RingZone>();
         gameManagerScript = GameObject.Find("Game Manager").GetComponent<GameManager>();        
         count = 1;
 
         textComponentP1.text = gameManagerScript.hackedFactories + "/" + MaxFactoryCount + " Hacked";
         textComponentP2.text = gameManagerScript.depositCount + "/" + MaxDepositCount + " Deposited";
         UI_Victory.SetActive(false);
+        HackingBar.SetActive(false);
     }
 
     // Update is called once per frame
@@ -150,7 +153,13 @@ public class Score : MonoBehaviour
                 break;
         }
 
-        HackingBar.GetComponent<UnityEngine.UI.Slider>().value = count;     //RingZoneScript.hackSteps;
+        if (RingZoneScript.hackSteps > 0)
+        {
+
+            HackingBar.SetActive(true);
+            
+        }
+        HackingBar.GetComponent<UnityEngine.UI.Slider>().value = RingZoneScript.hackSteps;
 
         //Text constantly updating to match Deposit Count and Hacked Factoriest
         textComponentP1.text = gameManagerScript.hackedFactories + "/" + MaxFactoryCount + " Hacked";
