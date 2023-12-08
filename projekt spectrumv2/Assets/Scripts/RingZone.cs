@@ -139,8 +139,8 @@ public class RingZone : MonoBehaviour {
                 hackSteps++;
                 if ( hackSteps == 10) {
                     gameManager.hackedFactories++;
-                }
-            }
+                } 
+            } 
         }  
     }
 
