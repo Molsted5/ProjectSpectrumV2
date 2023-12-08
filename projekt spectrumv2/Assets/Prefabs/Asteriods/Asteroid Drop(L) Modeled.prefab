@@ -8551,7 +8551,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3500
+  m_VersionIndex: 3503
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -8764,9 +8764,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f387c435eb2f4e05bef303c53766077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dmg2: {fileID: 2800000, guid: d96da44785fb6d747b8d240d53837378, type: 3}
+  dmg3: {fileID: 2800000, guid: b1768bd0e5494c54a8e08a11bc50e85a, type: 3}
   KnockbackStreangth: 0.01
   AsteroidHealth: 5
   Collectable: {fileID: 9177591812552198725, guid: 9692e29546dc8d949b09936bb76606e8, type: 3}
+  asteroideSource: {fileID: 9045538125797704147}
+  dropSound: {fileID: 8300000, guid: 5ad5d2c90ba355f498cc35e6c55ff41d, type: 3}
   CC: {fileID: 6281546466841091342}
   offset: 1.5
 --- !u!114 &566430631506557247

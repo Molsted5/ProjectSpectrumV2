@@ -21,7 +21,7 @@ public class Damagecolor : MonoBehaviour
     {
         shipRenderer = this.GetComponent<Renderer>();
         //shipMaterial = GetComponent<Renderer>().material;
-        //shipRenderer = GetComponent<Renderer>();
+        //shipRenderer = GetComponent<Renderer>(); 
     }
 
     private void Update()

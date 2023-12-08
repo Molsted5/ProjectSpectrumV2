@@ -44,13 +44,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99bbd7af49b39fd4bb64cc5d4369f62b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  count: 0
+  VirusInventoryEmpty: {fileID: 21300000, guid: c96d8cdcbf012154d99bd39f7a6b974f, type: 3}
+  VirusInventoryFull: {fileID: 21300000, guid: 6af39e3ad2aa2aa46a76ce39fa406cfe, type: 3}
+  ResourceInventoryEmpty: {fileID: 21300000, guid: d6063a13d6c465044b8819b4769f6bb1, type: 3}
+  ResourceInventoryFull: {fileID: 21300000, guid: 3b1216d354459ed4bb7a06bbadcaa312, type: 3}
   textComponentP1: {fileID: 0}
   textComponentP2: {fileID: 0}
-  Player1UIComponent: {fileID: 0}
-  Player2UIComponent: {fileID: 0}
-  VirusInventoryEmpty: {fileID: 0}
-  VirusInventoryFull: {fileID: 0}
+  VictoryScreen: {fileID: 0}
   VirusInventoryIcon: {fileID: 0}
-  Player1Lives: {fileID: 0}
-  Player2Lives: {fileID: 0}
-  TEST: {fileID: 0}
+  Player1Life1: {fileID: 0}
+  Player1Life2: {fileID: 0}
+  Player1Life3: {fileID: 0}
+  Player2Life1: {fileID: 0}
+  Player2Life2: {fileID: 0}
+  Player2Life3: {fileID: 0}
+  P2UIResource1: {fileID: 0}
+  P2UIResource2: {fileID: 0}
+  P2UIResource3: {fileID: 0}
+  P2UIResource4: {fileID: 0}
+  OtherIcons: {fileID: 0}
+  HackingBar: {fileID: 0}
+  UI_Canvas: {fileID: 0}
+  UI_Victory: {fileID: 0}

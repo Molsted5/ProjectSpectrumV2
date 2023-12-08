@@ -45,6 +45,7 @@ Material:
     - _RingFull: 0.95
     - _RingFullCenter: 0.9
     - _RingFullOutside: 0.95
+    - _Strength: 2
     - _VisibilityAlpha: 1
     m_Colors:
     - _DefaultColor: {r: 1, g: 1, b: 1, a: 0}

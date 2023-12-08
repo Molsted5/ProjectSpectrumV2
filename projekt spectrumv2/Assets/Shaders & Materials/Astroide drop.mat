@@ -37,7 +37,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Cracks:
-        m_Texture: {fileID: 2800000, guid: b1768bd0e5494c54a8e08a11bc50e85a, type: 3}
+        m_Texture: {fileID: 2800000, guid: ffa8d2666eb612a46af2bbd5d68c57c1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_0394c4af32b145728492b469bf2fd63f_Texture_1_Texture2D:
