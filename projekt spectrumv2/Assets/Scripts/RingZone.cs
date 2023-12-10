@@ -22,7 +22,10 @@ public class RingZone : MonoBehaviour {
     public float hackRate;
     public float hackCompleted = 10f;
     public bool isCromprimised;
-    public bool isCoroutineActive;
+    public bool shouldHackingCoroutineRun;
+    public bool hasHackingCoroutineStarted;
+    public bool shouldDepositingCoroutineRun;
+    public bool hasDepositingCoroutineStarted;
 
     public AudioSource factorySource;
     public AudioClip depositClip;
@@ -44,17 +47,21 @@ public class RingZone : MonoBehaviour {
     public void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("Player1")) {       // if player1 enters
             currentRingNumber = this.ringNumber;
-
             if (state == State.None) {   // if no state, then start hacking
                 previousState = state;                      // save previous state 
                 state = State.Hacking;
-                StartCoroutine(Hacking(hackRate));
+                shouldHackingCoroutineRun = true;
+                if (!hasHackingCoroutineStarted) {
+                    hasHackingCoroutineStarted = true;
+                    StartCoroutine(Hacking(hackRate));
+                }
             }
             else {                                          // else intercept the other players depositing
                 if (state == State.Depositing) {
                     previousState = state;
                     state = State.Intercepting;
-                    StopCoroutine(Deposeting(depositRate));
+                    shouldDepositingCoroutineRun = false;
+                    //StopCoroutine(Deposeting(depositRate));
                 }
             }
         }
@@ -63,13 +70,18 @@ public class RingZone : MonoBehaviour {
                 if (state == State.None) {                  // if no state, then start depositing
                     previousState = state;
                     state = State.Depositing;
-                    StartCoroutine(Deposeting(depositRate));
+                    shouldDepositingCoroutineRun = true;
+                    if (!hasDepositingCoroutineStarted) {
+                        hasDepositingCoroutineStarted = true;
+                        StartCoroutine(Deposeting(depositRate));
+                    } 
                 }
                 else {                                      // else intercept the other players hacking
                     if (state == State.Hacking) {
                         previousState = state;
                         state = State.Intercepting;
-                        StopCoroutine(Hacking(hackRate));
+                        shouldHackingCoroutineRun = false;
+                        //StopCoroutine(Hacking(hackRate));
                     }
                 }
             }
@@ -81,7 +93,8 @@ public class RingZone : MonoBehaviour {
             if (state == State.Hacking) { 
                 previousState = state;
                 state = State.None;
-                StopCoroutine(Hacking(hackRate)); 
+                shouldHackingCoroutineRun = false;
+                //StopCoroutine(Hacking(hackRate)); 
             }
             else {
                 if (state == State.Intercepting) {
@@ -102,7 +115,11 @@ public class RingZone : MonoBehaviour {
                     if (state == State.Intercepting) {
                         previousState = state;
                         state = State.Hacking;
-                        StartCoroutine(Hacking(hackRate));
+                        shouldHackingCoroutineRun = true;
+                        if (!hasHackingCoroutineStarted) {
+                            hasHackingCoroutineStarted = true;
+                            StartCoroutine(Hacking(hackRate));
+                        } 
                     }
                 }
             }
@@ -115,7 +132,10 @@ public class RingZone : MonoBehaviour {
         hackRate = 1f;
         hackSteps = 0f;
         isCromprimised = false;
-        isCoroutineActive = false;
+        shouldHackingCoroutineRun = false;
+        hasHackingCoroutineStarted = false;
+        shouldDepositingCoroutineRun = false;
+        hasDepositingCoroutineStarted = false;
 
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         barHacking = GameObject.Find("HackingBar_Image").GetComponent<Image>().material;
@@ -142,6 +162,9 @@ public class RingZone : MonoBehaviour {
     }
 
     public IEnumerator Deposeting(float depositRate) {
+        if (!shouldDepositingCoroutineRun) {
+            yield break;
+        }
         while (true) {
             yield return new WaitForSeconds(depositRate);
             if (gameManager.recourceCount > 0 && state == State.Depositing) {
@@ -154,6 +177,9 @@ public class RingZone : MonoBehaviour {
     }
 
     public IEnumerator Hacking(float hackRate){
+        if (!shouldHackingCoroutineRun) {
+            yield break; 
+        }
         while (true){
             yield return new WaitForSeconds(hackRate);
             if ((gameManager.virusCount == 1 || isCromprimised) && state == State.Hacking) {
