@@ -16,6 +16,10 @@ public class RingZone : MonoBehaviour {
     TextMeshPro tmp2;
     //TextMeshPro tmp;
     GameManager gameManager;
+    FactoryController factoryActive;
+    FactoryController factoryActive2;
+    FactoryController factoryBroken;
+    FactoryController factoryBroken2;
 
     public float depositRate;
     public float hackSteps;
@@ -26,6 +30,7 @@ public class RingZone : MonoBehaviour {
     public bool hasHackingCoroutineStarted;
     public bool shouldDepositingCoroutineRun;
     public bool hasDepositingCoroutineStarted;
+    public bool isFactorySwapped;
 
     public AudioSource factorySource;
     public AudioClip depositClip;
@@ -126,6 +131,13 @@ public class RingZone : MonoBehaviour {
         }
     }
 
+    void Awake() {
+        factoryActive = GameObject.Find("FactoryActive").GetComponent<FactoryController>();
+        factoryActive2 = GameObject.Find("FactoryActive2").GetComponent<FactoryController>();
+        factoryBroken = GameObject.Find("FactoryBroken").GetComponent<FactoryController>();
+        factoryBroken2 = GameObject.Find("FactoryBroken2").GetComponent<FactoryController>();
+    }
+
     // Start is called before the first frame update
     void Start() {
         depositRate = 2f;
@@ -136,11 +148,11 @@ public class RingZone : MonoBehaviour {
         hasHackingCoroutineStarted = false;
         shouldDepositingCoroutineRun = false;
         hasDepositingCoroutineStarted = false;
+        isFactorySwapped = false;
 
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         barHacking = GameObject.Find("HackingBar_Image").GetComponent<Image>().material;
-        barHacking2 = GameObject.Find("HackingBar_Image2").GetComponent<Image>().material;
-
+        barHacking2 = GameObject.Find("HackingBar_Image2").GetComponent<Image>().material; 
 
         barHacking.SetFloat("_VisibilityAlpha", 0.0f);
         barHacking.SetFloat("_FillAmount", 0.0f);
@@ -246,10 +258,20 @@ public class RingZone : MonoBehaviour {
                 if (currentRingNumber == 1) {
                     barHacking.SetFloat("_BarVisibility", 0.0f);
                     tmp.text = "";
+                    if (!isFactorySwapped) {
+                        isFactorySwapped = true;
+                        factoryActive.SwapFactory();
+                        factoryBroken.SwapFactory();
+                    }
                 }
                 else if (currentRingNumber == 2) {
                     barHacking2.SetFloat("_BarVisibility", 0.0f);
                     tmp2.text = "";
+                    if (!isFactorySwapped) {
+                        isFactorySwapped = true;
+                        factoryActive2.SwapFactory();
+                        factoryBroken2.SwapFactory();
+                    }
                 }
                 break;
             case State.Depositing:
