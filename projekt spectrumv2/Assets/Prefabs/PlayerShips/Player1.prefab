@@ -2097,7 +2097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 1
   targetSpeed: 350
-  initialSpeed: 960
+  initialSpeed: 1300
   angularSpeedDefault: 1600
   angularDampingDefault: 40
   maxDriftSpeed: 1.5
@@ -2149,7 +2149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1335924308156598317, guid: 75f005531037f7441a6022c38dba8e57, type: 3}
   firingPoint: {fileID: 7462311820908453360}
-  currentLaunchforce: 250
+  currentLaunchforce: 300
   blasterAudio: {fileID: 6857842009764358063}
   blasterFiring: {fileID: 8300000, guid: fcc76a98b6f940945acb370cfa2da9d9, type: 3}
   firingRate: 0.4
