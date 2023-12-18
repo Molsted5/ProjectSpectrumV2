@@ -11,7 +11,7 @@ public class Score : MonoBehaviour
 {
     //Int Conuters
     public int count;
-    private int MaxFactoryCount = 3;
+    private int MaxFactoryCount = 2;
     private int MaxDepositCount = 10;
     
     //Sprites
