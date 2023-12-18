@@ -23,7 +23,7 @@ public class player2ShootTest : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.J) && firingTimer <= 0f)
+        if (Input.GetKey(KeyCode.L) && firingTimer <= 0f)
         {
             Shoot();
             firingTimer = firingRate;
