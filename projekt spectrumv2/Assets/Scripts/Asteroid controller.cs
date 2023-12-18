@@ -87,10 +87,10 @@ public class Asteroidcontroller : MonoBehaviour
                 ResourceDrop();
             }
 
-            if (AsteroidHealth < 1)
+            if (AsteroidHealth <= 1)
             {
                 ResourceDrop();
-                Destroy(gameObject);
+                Destroy(gameObject); 
                 
             }
         }
