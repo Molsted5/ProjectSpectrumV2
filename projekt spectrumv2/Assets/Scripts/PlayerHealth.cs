@@ -80,14 +80,14 @@ public class PlayerHealth : MonoBehaviour {
         if (gameObject.CompareTag("Player1")) {
             //gameManager.isTargetFound = false;
             gameManager.deathcountP1++;
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
             gameManager.RespawnPlayer(gameObject, gameManager.SpawnP1);
             //gameManager.SpawnPlayer(gameManager.Player1, gameManager.SpawnP1);
         }
         else {
             //gameManager.isTarget2Found = false;
             gameManager.deathcountP2++;
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
             gameManager.RespawnPlayer(gameObject, gameManager.SpawnP2);
             //gameManager.SpawnPlayer(gameManager.Player2, gameManager.SpawnP2);
         }

@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public bool isTargetFound; 
     public bool isTarget2Found; 
     public Transform shipTransform;
+    bool shouldRun;
 
     public enum Gamestate { 
        
@@ -57,11 +58,27 @@ public class GameManager : MonoBehaviour
     }
     void Start(){
         isGameLoaded = false;
+        shouldRun = false;
+    }
+
+public IEnumerator TimerRespawn(GameObject Player, float time) {
+        if (!shouldRun) {
+            yield break;
+        }
+        yield return new WaitForSeconds(time);
+        Player.SetActive(false);
+        Player.SetActive(true);
+        shouldRun = false;
     }
 
     public void RespawnPlayer(GameObject Player, Transform Spawn) {
-        Player.transform.position = Spawn.position; 
-        Player.SetActive(true);
+        
+        Player.transform.position = Spawn.position;
+        shouldRun = true;
+        StartCoroutine(TimerRespawn(Player, 0.05f)); 
+        //Player.SetActive(false);
+        //Player.SetActive(true);
+        
     }
 
     public void SpawnPlayer(GameObject Player, Transform Spawn) {
