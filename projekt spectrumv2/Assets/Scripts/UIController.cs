@@ -129,12 +129,12 @@ public class Score : MonoBehaviour
                 break;
             case 3:
                 Player1Life1.SetActive(false);
-                //1st life icon deactivated (dead sad days)
+                //1st life icon deactivated (dead sad days) 
                 break;
-        }
-
+        }                                                                                          
+                                                                                                                                                 
         switch (gameManagerScript.deathcountP2) //Life icons for player 2 decrease as deathCountP2 increase
-        {
+        {   
             case 0:
                 //All 3 life icons active as default
                 break;
@@ -164,10 +164,8 @@ public class Score : MonoBehaviour
         textComponentP1.text = gameManagerScript.hackedFactories + "/" + MaxFactoryCount + " Hacked";
         textComponentP2.text = gameManagerScript.depositCount + "/" + MaxDepositCount + " Deposited";
 
-
         if (gameManagerScript.gamestate == GameManager.Gamestate.winner) //When Victory disable UI and set UI winner text
         {
-
             UI_Canvas.SetActive(false);
             UI_Victory.SetActive(true);
 

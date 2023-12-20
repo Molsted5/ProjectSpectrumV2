@@ -212,7 +212,7 @@ public class RingZone : MonoBehaviour {
                     previousState = state;
                     state = State.Hacked;
                 }
-            }
+            } 
         }  
     }
 

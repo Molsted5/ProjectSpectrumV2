@@ -17,7 +17,6 @@ public class TutorialController : MonoBehaviour
     private GameObject ControlsComponent;
     private GameObject ShootComponent;
     private GameObject ObjectiveComponent;
-    public GameObject ShipText;
     public GameObject ContinueText;
     public GameObject WelcomeText;
     public GameObject End;
@@ -64,7 +63,6 @@ public class TutorialController : MonoBehaviour
         ShootComponent.SetActive(false);
         ObjectiveComponent = GameObject.Find("Objective_Intro");
         ObjectiveComponent.SetActive(false);
-        ShipText.SetActive(false);
         //ContinueText.SetActive(false);
         End.SetActive(false);
         Play.SetActive(false);
@@ -120,23 +118,18 @@ public class TutorialController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {           
             switch (StageCount)
-            {
+            {              
                 case 1:
                     WelcomeText.SetActive(false);
-                    ShipText.SetActive(true);                    
-                    Player1.SetActive(true);                    
+                    Player1.SetActive(true);
                     Player2.SetActive(true);
                     PlayerComponent.SetActive(true);
-                    StageCount++;
-                    break;
-                case 2:
                     ControlsComponent.SetActive(true);
-                    ShipText.SetActive(false);
                     Player1.GetComponent<PlayerController>().enabled = true;
                     Player2.GetComponent<PlayerController>().enabled = true;
                     StageCount++;
                     break;
-                case 3:
+                case 2:
                     Player1.GetComponent<Rigidbody>().velocity = Vector3.zero;
                     Player2.GetComponent<Rigidbody>().velocity = Vector3.zero;
                     Player1.transform.SetPositionAndRotation(P1Position, P1Rotation);
@@ -149,14 +142,14 @@ public class TutorialController : MonoBehaviour
                     Player2.GetComponent<player2ShootTest>().enabled = true;
                     StageCount++;
                     break;
-                case 4:
+                case 3:
                     ShootComponent.SetActive(false);
                     Player1.GetComponent<player1ShootTest>().enabled = false;
                     Player2.GetComponent<player2ShootTest>().enabled = false;
                     ObjectiveComponent.SetActive(true);
                     StageCount++;
                     break;
-                case 5:
+                case 4:
                     ObjectiveComponent.SetActive(false);
                     PlayerComponent.SetActive(false);
                     ContinueText.SetActive(false);

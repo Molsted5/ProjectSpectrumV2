@@ -59,7 +59,7 @@ public class PlayerHealth : MonoBehaviour {
         if (currentHealth <= 0f && !dead) {
             OnDeath();
         }
-        //Debug.Log(currentHealth);
+        //Debug.Log(currentHealth); 
     }
 
 

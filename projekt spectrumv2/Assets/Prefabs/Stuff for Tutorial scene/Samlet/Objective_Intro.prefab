@@ -278,7 +278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -289, y: -326}
+  m_AnchoredPosition: {x: -260, y: -326}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4410875603896251264
@@ -1097,7 +1097,7 @@ GameObject:
   - component: {fileID: 6477918382354462880}
   - component: {fileID: 2458288657029769357}
   m_Layer: 5
-  m_Name: Break_Text
+  m_Name: Shoot_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1150,7 +1150,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Break
+  m_text: Shoot
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1361,6 +1361,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2474714486581319929}
     m_Modifications:
+    - target: {fileID: 4689568904045023864, guid: 231c34b043ec044d6837230f47e3af1b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c10292baff1412845b0e5a97d5cbef35, type: 2}
     - target: {fileID: 8647005645785293468, guid: 231c34b043ec044d6837230f47e3af1b, type: 3}
       propertyPath: m_Name
       value: T_PickUp
@@ -1441,7 +1445,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 387013762908941441, guid: 6f71f477b498f41a29256be98970ab3f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -237
+      value: -212
       objectReference: {fileID: 0}
     - target: {fileID: 387013762908941441, guid: 6f71f477b498f41a29256be98970ab3f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1481,7 +1485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4035959293891266415, guid: 6f71f477b498f41a29256be98970ab3f, type: 3}
       propertyPath: m_VersionIndex
-      value: 1632
+      value: 1635
       objectReference: {fileID: 0}
     - target: {fileID: 7767704489375022669, guid: 6f71f477b498f41a29256be98970ab3f, type: 3}
       propertyPath: m_Name
@@ -1491,8 +1495,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: TutorialPrefab
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedComponents:
+    - {fileID: 4543159918218930526, guid: 6f71f477b498f41a29256be98970ab3f, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 666754469336391416, guid: 6f71f477b498f41a29256be98970ab3f, type: 3}
+    - {fileID: 244324830237994346, guid: 6f71f477b498f41a29256be98970ab3f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f71f477b498f41a29256be98970ab3f, type: 3}
@@ -1563,7 +1570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7897278305115263188, guid: f22256daf52d1447793aae88fe81ae36, type: 3}
       propertyPath: m_VersionIndex
-      value: 7993
+      value: 7996
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1377548299535471404, guid: f22256daf52d1447793aae88fe81ae36, type: 3}
@@ -1590,7 +1597,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 133089638388749167, guid: f811b13af204543e2bf2a5b847cce6e1, type: 3}
       propertyPath: m_VersionIndex
-      value: 1632
+      value: 1635
       objectReference: {fileID: 0}
     - target: {fileID: 4001577866286594276, guid: f811b13af204543e2bf2a5b847cce6e1, type: 3}
       propertyPath: m_Name
@@ -1640,8 +1647,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedComponents:
+    - {fileID: 2721552394646266492, guid: f811b13af204543e2bf2a5b847cce6e1, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 3292999141547847774, guid: f811b13af204543e2bf2a5b847cce6e1, type: 3}
+    - {fileID: 5797876511393477806, guid: f811b13af204543e2bf2a5b847cce6e1, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f811b13af204543e2bf2a5b847cce6e1, type: 3}
@@ -1702,7 +1712,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Virus_Tutorial
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5799661426081711908, guid: 53cf2bc34e2794acab370c1351c3e53c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

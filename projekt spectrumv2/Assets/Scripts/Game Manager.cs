@@ -46,10 +46,10 @@ public class GameManager : MonoBehaviour
         camControl.m_Targets[1] = winner;
 
         // ui ellemtner, + reset button
-        //zoom p� vinder selv fjender ikke er d�d
-    }
+        // zoom p� vinder selv fjender ikke er d�d
+    }     
 
-    public void Awake()
+    public void Awake() 
     {
         
         gamestate = Gamestate.gameActive;
