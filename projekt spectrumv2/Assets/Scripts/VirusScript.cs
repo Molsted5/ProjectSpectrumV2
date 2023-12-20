@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VirusScript : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class VirusScript : MonoBehaviour
 
     public void Start()
     {
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>(); 
        
     }
     private void OnTriggerEnter(Collider other)

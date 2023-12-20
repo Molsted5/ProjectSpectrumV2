@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -40,10 +40,17 @@ public class GameManager : MonoBehaviour
     public Gamestate gamestate;
     public Gamestate previusGamestate;
 
+    public IEnumerator WinningTime() {
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene(0); 
+    }
+
     public void Winner(Transform winner) {
 
         camControl.m_Targets[0] = winner;
         camControl.m_Targets[1] = winner;
+
+        StartCoroutine(WinningTime());      
 
         // ui ellemtner, + reset button
         // zoom p� vinder selv fjender ikke er d�d

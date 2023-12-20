@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Tree;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using TMPro;
-using OpenCover.Framework.Model;
+
 
 public class Score : MonoBehaviour
 {

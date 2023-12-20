@@ -1717,6 +1717,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5024952945875236121, guid: 9061d3afd4dfb4c678369098dd0b05b5, type: 3}
+      propertyPath: m_text
+      value: Press ENTER to start the game!
+      objectReference: {fileID: 0}
     - target: {fileID: 5631425528490750594, guid: 9061d3afd4dfb4c678369098dd0b05b5, type: 3}
       propertyPath: m_Name
       value: Single Texts

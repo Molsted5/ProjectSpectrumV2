@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Content;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class VirusSpawner : MonoBehaviour
 {

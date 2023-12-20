@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialController : MonoBehaviour
 {   
@@ -114,7 +115,9 @@ public class TutorialController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (StageCount == 5 & Input.GetKeyDown(KeyCode.Return)) { // start game 
+            SceneManager.LoadScene(2); 
+        }
         if (Input.GetKeyDown(KeyCode.K))
         {           
             switch (StageCount)

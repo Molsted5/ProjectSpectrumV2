@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using Unity.Burst.CompilerServices;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RingZone : MonoBehaviour {
     public int ringNumber;
@@ -180,7 +181,7 @@ public class RingZone : MonoBehaviour {
         while (true) {
             yield return new WaitForSeconds(depositRate);
             if (gameManager.recourceCount > 0 && state == State.Depositing) {
-                gameManager.recourceCount--;
+                gameManager.recourceCount--; 
                 factorySource.clip = depositClip;
                 factorySource.Play();
                 gameManager.depositCount++;
