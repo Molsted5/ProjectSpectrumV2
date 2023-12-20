@@ -23,11 +23,11 @@ public class VirusScript : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(other.CompareTag("Bullet2"))
+        /* if(other.CompareTag("Bullet2"))
         {
             gameManager.canSpawn = true;
 
             Destroy(gameObject);
-        }
+        } */ 
     }
 }

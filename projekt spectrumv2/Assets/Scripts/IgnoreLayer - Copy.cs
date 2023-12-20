@@ -11,6 +11,6 @@ public class IgnoreLayer : MonoBehaviour
         Physics.IgnoreLayerCollision(6, 8);
         Physics.IgnoreLayerCollision(6, 7);
         Physics.IgnoreLayerCollision(8, 7);
-        Physics.IgnoreLayerCollision(8, 9); 
+        Physics.IgnoreLayerCollision(8, 9);
     }
 }
