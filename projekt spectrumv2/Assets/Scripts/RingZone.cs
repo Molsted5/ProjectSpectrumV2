@@ -197,8 +197,8 @@ public class RingZone : MonoBehaviour {
             if ((gameManager.virusCount == 1 || isCromprimised) && state == State.Hacking) {
                 isCromprimised = true;
                 if (hackSteps == 1) { 
-                gameManager.virusCount--;
-                    
+                    gameManager.virusCount--;
+                    gameManager.canSpawn = true;
                 }
                 hackSteps++;
                 barHacking.SetFloat("_FillAmount", hackSteps / 10f);

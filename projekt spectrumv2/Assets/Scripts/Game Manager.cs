@@ -91,7 +91,7 @@ public IEnumerator TimerRespawn(GameObject Player, float time) {
         if (Player.CompareTag("Player2")) {
             shipTransform = GameObject.FindWithTag("Player2").GetComponent<Rigidbody>().transform;
             camControl.FindTargets(2);
-        }
+        } 
     }
     
     private void OnActiveGameLoad()
@@ -126,12 +126,12 @@ public IEnumerator TimerRespawn(GameObject Player, float time) {
                 winner = player2Transform;
                 gamestate = Gamestate.winner;
             }
-            else if (hackedFactories == 3 || deathcountP2 == 3) {
+            else if (hackedFactories == 2 || deathcountP2 == 3) {
                 winner = player1Transform;
                 gamestate = Gamestate.winner;
             }
         }
-    
+        
         switch (gamestate) {
             case Gamestate.titlecard:
                 // load title scene

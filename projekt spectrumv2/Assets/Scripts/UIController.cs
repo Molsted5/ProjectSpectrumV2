@@ -176,7 +176,7 @@ public class Score : MonoBehaviour
                 VictoryScreen.text = "Player 2 Victory!";
             }
 
-            else if (gameManagerScript.hackedFactories == 3 || gameManagerScript.deathcountP2 == 3)
+            else if (gameManagerScript.hackedFactories == 2 || gameManagerScript.deathcountP2 == 3)
             {
                 VictoryScreen.text = "Player 1 Victory!";
             }
