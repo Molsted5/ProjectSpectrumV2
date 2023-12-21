@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1499,6 +1499,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 475914092949841789, guid: 0eb0b3a73b8314f659a3fa3cef63b147, type: 3}
+      propertyPath: m_text
+      value: Complete your objective and watch your health.    You only have 3 lives.
+      objectReference: {fileID: 0}
     - target: {fileID: 2474714486581319929, guid: 0eb0b3a73b8314f659a3fa3cef63b147, type: 3}
       propertyPath: m_LocalPosition.x
       value: 929.5083
@@ -1717,6 +1721,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4597642216295047276, guid: 9061d3afd4dfb4c678369098dd0b05b5, type: 3}
+      propertyPath: m_text
+      value: Good Luck!
+      objectReference: {fileID: 0}
     - target: {fileID: 5024952945875236121, guid: 9061d3afd4dfb4c678369098dd0b05b5, type: 3}
       propertyPath: m_text
       value: Press ENTER to start the game!
@@ -1724,6 +1732,10 @@ PrefabInstance:
     - target: {fileID: 5631425528490750594, guid: 9061d3afd4dfb4c678369098dd0b05b5, type: 3}
       propertyPath: m_Name
       value: Single Texts
+      objectReference: {fileID: 0}
+    - target: {fileID: 6057836091436995238, guid: 9061d3afd4dfb4c678369098dd0b05b5, type: 3}
+      propertyPath: m_text
+      value: Press H to continue
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

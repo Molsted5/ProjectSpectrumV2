@@ -118,7 +118,7 @@ public class TutorialController : MonoBehaviour
         if (StageCount == 5 & Input.GetKeyDown(KeyCode.Return)) { // start game 
             SceneManager.LoadScene(2); 
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.H))
         {           
             switch (StageCount)
             {              
