@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -20,13 +21,15 @@ public class ResourceScript : MonoBehaviour
 
         if (other.CompareTag("Player2"))
         {
-            gameManager.recourceCount++;
-            Destroy(gameObject);
+            if (gameManager.recourceCount < 4) {
+                gameManager.recourceCount++;
+                Destroy(gameObject); 
+            }          
         }
 
-        if (other.CompareTag("Bullet1"))
+        /*if (other.CompareTag("Bullet1"))
         {
             Destroy(gameObject);
-        }
+        }*/
     }
 }

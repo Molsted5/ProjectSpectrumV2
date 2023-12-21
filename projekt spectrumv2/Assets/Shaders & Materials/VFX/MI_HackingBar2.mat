@@ -44,7 +44,7 @@ Material:
     - _BarVisibility: 0
     - _BorderSize: 0.01
     - _ColorSwitch: 1
-    - _FillAmount: 0.6
+    - _FillAmount: 0
     - _Float: 1
     - _QueueControl: 0
     - _QueueOffset: 0

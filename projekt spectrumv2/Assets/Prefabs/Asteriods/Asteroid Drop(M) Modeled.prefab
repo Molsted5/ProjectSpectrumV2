@@ -8614,7 +8614,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5176996284284784113}
   serializedVersion: 4
-  m_Mass: 10
+  m_Mass: 25
   m_Drag: 0.75
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -8767,12 +8767,15 @@ MonoBehaviour:
   dmg2: {fileID: 2800000, guid: d96da44785fb6d747b8d240d53837378, type: 3}
   dmg3: {fileID: 2800000, guid: b1768bd0e5494c54a8e08a11bc50e85a, type: 3}
   KnockbackStreangth: 0.01
-  AsteroidHealth: 2
+  AsteroidHealth: 3
   Collectable: {fileID: 9177591812552198725, guid: 9692e29546dc8d949b09936bb76606e8, type: 3}
   asteroideSource: {fileID: 1310117719838547171}
   dropSound: {fileID: 8300000, guid: 5ad5d2c90ba355f498cc35e6c55ff41d, type: 3}
   CC: {fileID: -8817102975713240860}
   offset: 1.5
+  hasDropped1: 0
+  hasDropped2: 0
+  hasDropped3: 0
 --- !u!114 &-5351444283004584767
 MonoBehaviour:
   m_ObjectHideFlags: 0
